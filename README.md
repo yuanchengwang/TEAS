@@ -84,8 +84,15 @@ Warning: don't touch the method block while annotating, the modified annotation 
 ——Undo module.
 ——MIDI prototype system.
 
-
 ############## Citation #######################
-For Academic Use
-Author and Developer: Yuancheng Wang
-Citation: Yuancheng Wang, Yuyang Jing, Wei Wei, Dorian Cazau, Olivier Adam, Qiao Wang. PipaSet and TEAS: A Multimodal Dataset and Annotation Platform for Automatic Music Transcription and Expressive Analysis dedicated to Chinese Plucked String Instrument Pipa. IEEE ACCESS, 2022.
+For Academic Use:
+If you are using this platform in research work for publication, please cite:
+Yuancheng Wang, Yuyang Jing, Wei Wei, Dorian Cazau, Olivier Adam, Qiao Wang. PipaSet and TEAS: A Multimodal Dataset and Annotation Platform for Automatic Music Transcription and Expressive Analysis dedicated to Chinese Plucked String Instrument Pipa. IEEE ACCESS, 2022.
+
+The original code is based on the Luwei Yang's work:
+If you are using AVA in research work for publication, please cite:
+luweiyang.com/research/ava-project
+1. Luwei Yang, Khalid Z. Rajab and Elaine Chew. AVA: A Graphical User Interface for Automatic Vibrato and Portamento Detection and Analysis, In Proc. of the 42nd International Computer Music Conference (ICMC), September 2016.
+2. Luwei Yang, Khalid Z. Rajab and Elaine Chew. AVA: An Interactive System for Visual and Quantitative Analyses of Vibrato and Portamento Performance Styles, In Proc. of the 17th International Society for Music Information Retrieval Conference, 2016.
+
+
