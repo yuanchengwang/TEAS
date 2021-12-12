@@ -2,12 +2,14 @@
 TEAS: Transcription and Expressiveness Annotation System dedicated to Chinese Tranditional Instrument Pipa
 
 ############### Required package #################
+
 This is developed on Windows and Matlab 2021a with all packages installed.
 If you want to run the pyin (tony) as pitch tracker and pitch2note for note annotation, 
 download sonic-annotator(64bit) and add it in the system path. 
 Put the pyin_1.1.1.dll in vamplugin file in your system (C:\Program Files\Vamp Plugins for Windows) otherwise the n3 files don’t work.
 
 ################ Usage of enhanced AVA platform ##########################
+
 1, Preset and Run Main file.
 Set basic paramters in parameter_setting.m like the string properties, initial guess of BPM, etc. Set MIDI parameter in prototype_setting.m if you need special export for midi like the midi mode. 
 All parameters are set by default specific to our study target, PIPA. 
@@ -81,10 +83,12 @@ Get Strumming(s) and correct the strumming Area.
 Warning: don't touch the method block while annotating, the modified annotation may be rewritten.
 
 ############### Future work ######################
+
 ——Undo module.
 ——MIDI prototype system.
 
 ############## Citation #######################
+
 For Academic Use:
 If you are using this platform in research work for publication, please cite:
 Yuancheng Wang, Yuyang Jing, Wei Wei, Dorian Cazau, Olivier Adam, Qiao Wang. PipaSet and TEAS: A Multimodal Dataset and Annotation Platform for Automatic Music Transcription and Expressive Analysis dedicated to Chinese Plucked String Instrument Pipa. IEEE ACCESS, 2022.
