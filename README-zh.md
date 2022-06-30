@@ -19,15 +19,15 @@
     
     - 音频文件:    `作品英文名`_source`轨道或弦号`.wav
       
-      - 示例:    `NanniBay_source1.wav`
+      示例:    `NanniBay_source1.wav`
     
     - <u>数据文件</u>:    `作品英文名`_source `轨道或弦号` _`数据类型` _str`弦号`.csv
       
-      - 示例:    `NanniBay_source1_edge_str1.csv`
+      示例:    `NanniBay_source1_edge_str1.csv`
     
     - 备份文件:    `源文件名`_original.csv
       
-      - 示例:    `NanniBay_source1_pitch_str1_original.csv`
+      示例:    `NanniBay_source1_pitch_str1_original.csv`
     
     <u>(*):</u>TEAS会自动通过弦号定义和音频源文件在导出文件时提供标准化的名称
 
@@ -219,11 +219,11 @@
         
         - 处理结果：
         
-        - <img title="" src="file:///C:/Users/14862/AppData/Roaming/marktext/images/2022-06-30-14-12-36-image.png" alt="" width="184" data-align="left">
+        - <img title="" src="https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-12-36-image.png" alt="" width="184" data-align="left">
       
       - 可选方案2: 直接修改note的位置
         
-        - 记录左侧note的头位置（点击高亮该note，最左下方的输入框内会显示当前选中note的信息）<img src="file:///C:/Users/14862/AppData/Roaming/marktext/images/2022-06-30-14-15-30-image.png" title="" alt="" width="307">
+        - 记录左侧note的头位置（点击高亮该note，最左下方的输入框内会显示当前选中note的信息）<img src="https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-15-30-image.png" title="" alt="" width="307">
         
         - 将左侧note删除（点击高亮该note，点击Delete Note按钮）
         
@@ -231,7 +231,7 @@
         
         - 处理结果：
         
-        - <img title="" src="file:///C:/Users/14862/AppData/Roaming/marktext/images/2022-06-30-14-16-11-image.png" alt="" width="296" data-align="left">
+        - <img title="" src="https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-16-11-image.png" alt="" width="296" data-align="left">
 
 ### 音乐技巧分析
 
@@ -348,16 +348,16 @@ https://zenodo.org/record/6760047
 更多数据将会在未来发布
 
 ##### 未来工作
-更多更精确的识别算法
-MPE,(music)XML,JAMS等输出功能
-MIDI协议功能
+- 更多更精确的识别算法
+- MPE,(music)XML,JAMS等输出功能
+- MIDI协议功能
 
 ##### 引用
 
 学术目的: 如果您使用该平台和相关数据在您的发表的文章中，请引用: 
 Yuancheng Wang, Yuyang Jing, Wei Wei, Dorian Cazau, Olivier Adam, Qiao Wang. PipaSet and TEAS: A Multimodal Dataset and Annotation Platform for Automatic Music Transcription and Expressive Analysis dedicated to Chinese Plucked String Instrument Pipa（In review）. IEEE ACCESS, 2022.
 
-最早的原始版本来源于Luwei Yang的工作: luweiyang.com/research/ava-project
+最早的原始版本来源于Luwei Yang的工作: [luweiyang.com/research/ava-project](https://luweiyang.com/research/ava-project/)
 如果使用 AVA在您的发表的文章中，请引用: 
 Luwei Yang, Khalid Z. Rajab and Elaine Chew. AVA: A Graphical User Interface for Automatic Vibrato and Portamento Detection and Analysis, In Proc. of the 42nd International Computer Music Conference (ICMC), September 2016.
 Luwei Yang, Khalid Z. Rajab and Elaine Chew. AVA: An Interactive System for Visual and Quantitative Analyses of Vibrato and Portamento Performance Styles, In Proc. of the 17th International Society for Music Information Retrieval Conference, 2016.
