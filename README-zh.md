@@ -35,28 +35,29 @@
 
 - 第三步:    运行`GUI_Main.m`文件，您将看到TEAS的默认页面: Read Audio
 
+- 第四步:    在Multitrack+MIDI界面中，每个分轨的audio部分导入对应弦带有串音的录制文件，然后右侧的Signal Separation按钮，运算完成后，可以在每个分轨的audio部分导出分离后的音频。(可选)
+
 ## 使用TEAS:
 
 使用TEAS进行标记可以粗略分为以下步骤：
-- [零、MSS(多源分离)- Multitrack](#可选：多源分离缓解串音)
 
 - [一、AMT(自动音乐转录)](#自动音乐转录)
   
-  1. [导入降噪处理后的分轨音频](#一、导入降噪后的分轨音频)
+  1. 导入降噪处理后的分轨音频
   
-  2. [生成并修改Pitch - Pitch Detection](#二、生成并修改Pitch)
+  2. 生成并修改Pitch - Pitch Detection
   
-  3. [标记Onset&Offset&Note - Note Detection](#三、生成并修改Edges+Notes)
+  3. 标记Onset&Offset&Note - Note Detection
 
 - 二、[EA(音乐技巧分析)](#音乐技巧分析)
   
-  1. [颤音标记 - Vibrato Analysis](#揉弦标记)
+  1. 颤音标记 - Vibrato Analysis
   
-  2. [滑音标记 - Sliding Analysis](#滑音标记)
+  2. 滑音标记 - Sliding Analysis
   
-  3. [震音标记 - Tremolo Analysis](#轮指标记)
+  3. 震音标记 - Tremolo Analysis
 
-  4. [扫弦标记 - Strumming Analysis](#扫弦标记)
+  4. 扫弦标记 - Strumming Analysis
 
 - 三、[多轨显示与输出](#多轨分析处理)
   
@@ -64,9 +65,6 @@
   
 
 ### 自动音乐转录:
-##### 零、导入降噪后的分轨音频（可选）
-
-- 在Multitrack+MIDI界面中，每个分轨的audio部分导入对应弦带有串音的录制文件，然后右侧的Signal Separation按钮，运算完成后，可以在每个分轨的audio部分导出分离后的音频。
 
 ##### 一、导入降噪后的分轨音频
 
@@ -251,7 +249,9 @@
 
 - 点击Export All按钮来导出所有Vibrato事件参数
 
-注： 请根据实际情况自行调整vibrato/trill/bending类型
+注: 请根据实际情况自行调整vibrato/trill/bending类型
+
+注2: vibrato部分,vibrato自动规整到一个音符的第二个onset和offset之间，performance-level级别.因此只会比一个音范围小的
 
 ##### 二、滑音标记
 
@@ -272,6 +272,9 @@
 - 点击Logistics Model生成模型参数
 
 - 点击Export All来导出所有Sliding事件参数
+
+注:sliding,sliding out音高取滑前音高，sliding in取滑后音高 
+
 
 ##### 三、轮指标记
 
