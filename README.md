@@ -36,6 +36,8 @@
 
 - Run `GUI_Main.m`. You should see the default tab of TEAS: Read Audio
 
+- Import audio sources with string sound leakage in Multitrack+MIDI tab. then click on `Signal Separation` button to process the audio. Export the audio after the calculation process.(Optional)
+
 ## TEAS Workflow:
 
 The workflow of TEAS can be categorized into these steps:
