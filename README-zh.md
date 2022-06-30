@@ -1,4 +1,4 @@
-[![en](https://img.shields.io/badge/Language:-English-red.svg)](https://github.com/yuanchengwang/TEAS/blob/main/README.md)
+[![en](https://img.shields.io/badge/English-Document-red.svg)](https://github.com/yuanchengwang/TEAS/blob/main/README.md)
 # TEAS 快速入门教程
 
 **Quick Tutorial for Transcription and Expressiveness Annotation System**
