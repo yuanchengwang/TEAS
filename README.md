@@ -1,6 +1,7 @@
+[![zh](https://img.shields.io/badge/lang-zh-green.svg)](https://github.com/yuanchengwang/TEAS/blob/main/README-zh.md)
 # TEAS
 TEAS: Transcription and Expressiveness Annotation System dedicated to Chinese Tranditional Instrument Pipa
-[![zh](https://img.shields.io/badge/lang-zh-green.svg)](https://github.com/yuanchengwang/TEAS/blob/main/README-zh.md)
+
 ############### Required package #################
 
 This is developed on Windows and Matlab 2021a with all packages installed.
