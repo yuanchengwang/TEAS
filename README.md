@@ -2,7 +2,7 @@
 
 [![zh](https://img.shields.io/badge/点击这里-查看中文文档-green.svg)](https://github.com/yuanchengwang/TEAS/blob/main/README-zh.md)
 
-# TEAS Quick Start
+# TEAS Quick Start Guide
 
 **Quick Tutorial for Transcription and Expressiveness Annotation System**
 
