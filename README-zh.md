@@ -252,6 +252,7 @@
 - 点击Export All按钮来导出所有Vibrato事件参数
 
 注: 请根据实际情况自行调整vibrato/trill/bending类型
+
 注2: vibrato部分,vibrato自动规整到一个音符的第二个onset和offset之间，performance-level级别.因此只会比一个音范围小的
 
 ##### 二、滑音标记
@@ -273,6 +274,7 @@
 - 点击Logistics Model生成模型参数
 
 - 点击Export All来导出所有Sliding事件参数
+
 注:sliding,sliding out音高取滑前音高，sliding in取滑后音高 
 
 
