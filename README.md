@@ -40,7 +40,7 @@
 
 The workflow of TEAS can be categorized into these steps:
 
-- [AMT(Automatic music transcription)](#AMT(Automatic music transcription))
+- [AMT(Automatic music transcription)](#AMT(Automatic-music-transcription))
   
   1. Import denoised audio source
   
@@ -48,7 +48,7 @@ The workflow of TEAS can be categorized into these steps:
   
   3. Note Detection
 
-- [EA(Emotion analysis)](#EA(Emotion analysis))
+- [EA(Emotion analysis)](#EA(Emotion-analysis))
   
   1. Vibrato Analysis
   
@@ -58,7 +58,7 @@ The workflow of TEAS can be categorized into these steps:
   
   4. Strumming Analysis
 
-- [Multitrack Midi project](#Multitrack Midi project)
+- [Multitrack Midi project](#Multitrack-Midi-project)
   
   1. Multitrack+MIDI
 
