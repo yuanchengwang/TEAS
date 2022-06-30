@@ -21,7 +21,7 @@
       
       - 示例:    `NanniBay_source1.wav`
     
-    - <u>数据文件</u>:    `[作品英文名]`_source `[轨道或弦号]` _`[数据类型]` _str`弦号`.csv
+    - <u>数据文件</u>:    `作品英文名`_source `轨道或弦号` _`数据类型` _str`弦号`.csv
       
       - 示例:    `NanniBay_source1_edge_str1.csv`
     
@@ -50,13 +50,13 @@
 
 - 二、[EA(音乐技巧分析)](#音乐技巧分析)
   
-  1. [识别并标记颤音 - Vibrato Analysis](#识别并标记揉弦)
+  1. [颤音标记 - Vibrato Analysis](#揉弦标记)
   
-  2. [识别并标记滑音 - Sliding Analysis](#识别并标记滑音)
+  2. [滑音标记 - Sliding Analysis](#滑音标记)
   
-  3. [识别并标记震音 - Tremolo Analysis](#识别并标记轮指)
+  3. [震音标记 - Tremolo Analysis](#轮指标记)
 
-  4. [识别并标记扫弦 - Strumming Analysis](#识别并标记扫弦)
+  4. [扫弦标记 - Strumming Analysis](#扫弦标记)
 
 - 三、[多轨显示与输出](#多轨分析处理)
   
@@ -66,7 +66,7 @@
 ### 自动音乐转录:
 ##### 零、导入降噪后的分轨音频（可选）
 
-- 在Multitrack+MIDI界面中，每个track的audio部分导入对应弦带有串音的录制文件，然后右侧的Signal Separation按钮，运算完成后，可以在每个track的audio部分导出分离后的音频。
+- 在Multitrack+MIDI界面中，每个分轨的audio部分导入对应弦带有串音的录制文件，然后右侧的Signal Separation按钮，运算完成后，可以在每个分轨的audio部分导出分离后的音频。
 
 ##### 一、导入降噪后的分轨音频
 
@@ -132,7 +132,8 @@
   
   - Offset = MIDI音符结束的标记
   
-  - 注： 在弹奏琵琶时，假指甲与琵琶的弦碰撞产生的第一次碰撞，让琵琶一个音拥有<u>两个能量波锋对应一个单音</u>的属性。因此，在实际标注中，我们需要使两个Onset对应一个Offset
+  - 注： 在弹奏琵琶时，假指甲与琵琶的弦碰撞产生第一次峰值（note的起始,key-on），弦起振带来第二个峰值（强度的估计），因此琵琶一个音拥有<u>两个能量波锋对应一个单音</u>的属性。在实际标注中，一个音有两个Onset和一个Offset;
+
 
 - 单音示例
   
@@ -163,15 +164,13 @@
   - 标记流程:
     
     <ol>
-    <li> 点击Onset Detection按钮，算法将自动识别峰值能量点（高precision会有较高的False Positive）,并将被绘制为粉色竖线，也可以用Select Boundary Area选择一个区域的所有Boundary(Onset+offset)
-    <li> 可以通过plot audio显示与关闭音频曲线确定哪些onset是合适的位置
-    <li> 删除所有轮指处过多的Onset(删除中间红色过于密集的部分，留一头一尾)、Pitch为零(没有Pitch黑线但被识别成Onset)的Onset
-    <li> 当onset没有过于明显的错误时(没有过于密集的/出现于无Pitch部分的),点击Offset Detection按钮，算法将自动识别Offset的位置，并将其绘制为黄色竖线(大部分可能和下一个音的Onset重叠，因此看不大出来)
+    <li> 点击Onset Detection按钮，算法将自动识别峰值能量点（高precision会有较高的False Positive）,并将被绘制为红色竖线，也可以用Select Boundary Area选择一个区域的所有Boundary(Onset+offset)
+    <li> 删除所有轮指处过多的Onset(删除中间红色过于密集的部分，留一头一尾)、串音对应的Onset。技巧：可以通过plot audio显示与关闭音频曲线确定哪些onset是合适的位置
+    <li> onset修正后,点击Offset Detection按钮，算法将自动识别Offset的位置，并将其绘制为黄色竖线(大部分可能和下一个音的Onset重叠，因此看不大出来)
     <li> 逐个区域使用放大镜进行修正，并重复Offset Detection。当Offset Detection完成后，将Choose pitch2note method设置为HMM baseline（默认）,并点击Pitch2note按钮，生成当前Onset识别出的音符，以辅助识别校正。当pitch2note计算完成后，将会在左下方的列表中列出所有的note，并渲染到上方图表中。鼠标单击列表或图标中的note，将会在下方图表中渲染出选中note的细节图
-
     </ol>
     
-    - 注意:当第三步出现以下报错时，Onset为奇数，整体中存在错误
+    - 注意:当第三步出现以下报错时，Onset为奇数（琵琶场景下），整体中存在错误
       
       - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-53-18-image.png)
       
@@ -224,11 +223,11 @@
       
       - 可选方案2: 直接修改note的位置
         
-        - 记录左侧note的头位置（点击高亮该note，最左下方的输入框内会    显示当前选中note的信息）<img src="file:///C:/Users/14862/AppData/Roaming/marktext/images/2022-06-30-14-15-30-image.png" title="" alt="" width="307">
+        - 记录左侧note的头位置（点击高亮该note，最左下方的输入框内会显示当前选中note的信息）<img src="file:///C:/Users/14862/AppData/Roaming/marktext/images/2022-06-30-14-15-30-image.png" title="" alt="" width="307">
         
         - 将左侧note删除（点击高亮该note，点击Delete Note按钮）
         
-        - 点击右侧note，将最左下角的note开始时间设定为前一个note的开    始时间，然后点击Modify按钮即可
+        - 点击右侧note，将最左下角的note开始时间设定为前一个note的开始时间，然后点击Modify按钮即可
         
         - 处理结果：
         
@@ -236,7 +235,7 @@
 
 ### 音乐技巧分析
 
-##### 一、识别并标记揉弦
+##### 一、揉弦标记
 
 ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-28-56-image.png)
 
@@ -252,7 +251,9 @@
 
 - 点击Export All按钮来导出所有Vibrato事件参数
 
-##### 二、识别并标记滑音
+注： 请根据实际情况自行调整vibrato/trill/bending类型
+
+##### 二、滑音标记
 
 ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-29-56-image.png)
 
@@ -260,7 +261,7 @@
 
 - 点击Vibrato-free Pitch按钮 - 筛选掉所有在上一步已经确定是Vibrato技法的Pitch，以提高识别的精确度
 
-- 逐次点击Get Sliding(s)按钮,检测到符合筛选类型的Slidings会逐渐增多。每次点击都会增加检测的细致程度。注意：如果点击次数过多，将会引入过量错误结果，需要靠聆听和观察Note中的Pitch走向来进行取舍
+- 逐次点击Get Sliding(s)按钮,检测到符合筛选类型的Slidings会逐渐增多。每次点击都会增加检测的细致程度。注意：如果点击次数过多（不要超过3次），将会引入过平滑的结果影响最后的估计参数，需要靠聆听和观察Note中的Pitch走向来进行取舍。
 
 - 点击左下方列表中的Slidings来选中，点击Play Sliding可以播放当前选中的sliding区域。必要的时候可以对上图中高亮的区域放大进行检查实际Pitch Curve
 
@@ -272,7 +273,7 @@
 
 - 点击Export All来导出所有Sliding事件参数
 
-##### 三、识别并标记轮指
+##### 三、轮指标记
 
 ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-22-54-image.png)
 
@@ -286,7 +287,7 @@
 
 - 在每个正确的Tremolo右侧选择对应的Type
 
-- 示例:正确的Tremolo标记
+- 示例:正确的Tremolo 标记,里面pluck类似onset，两个对应一次弹奏
   
   - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-28-13-image.png)
 
@@ -294,7 +295,9 @@
 
 - 点击Export Parameters按钮导出所有Tremolo事件参数
 
-##### 四、识别并标记扫弦
+注：对于2，3弦，技巧默认是摇而不是轮，请根据实际情况进行调整。
+
+##### 四、扫弦标记
 
 ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-40-43-image.png)
 
@@ -304,7 +307,7 @@
   
   ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-41-49-image.png)
 
-- 分别导入4个轨道的onset
+- 分别导入4个轨道的onset，选择imported onset, 点击test and plot按钮，显示没根弦的起始点位置
 
 - 点击Get Strumming(s)按钮
 
@@ -315,6 +318,8 @@
 - 点击Export Area(s) 按钮导出所有Strumming事件范围
 
 - 点击Export Parameters按钮导出所有Strumming事件参数
+
+注： 请根据实际情况自行调整扫弦类型
 
 ### 多轨分析处理
 
@@ -337,4 +342,22 @@
     在弹出的文件选择框的下方可以选择保存为Project或保存为Midi文件。
     当确认保存位置后，会出现bpm确认的弹窗。如果估计的bpm值与实际值偏差较大，可以从command window中直接设置bpm。
 
+##### 预览数据集
+包含茉莉花南泥湾十面埋伏(第一段)的多模态数据集预览：
+https://zenodo.org/record/6760047
+更多数据将会在未来发布
 
+##### 未来工作
+更多更精确的识别算法
+MPE,(music)XML,JAMS等输出功能
+MIDI协议功能
+
+##### 引用
+
+学术目的: 如果您使用该平台和相关数据在您的发表的文章中，请引用: 
+Yuancheng Wang, Yuyang Jing, Wei Wei, Dorian Cazau, Olivier Adam, Qiao Wang. PipaSet and TEAS: A Multimodal Dataset and Annotation Platform for Automatic Music Transcription and Expressive Analysis dedicated to Chinese Plucked String Instrument Pipa（In review）. IEEE ACCESS, 2022.
+
+最早的原始版本来源于Luwei Yang的工作: luweiyang.com/research/ava-project
+如果使用 AVA在您的发表的文章中，请引用: 
+Luwei Yang, Khalid Z. Rajab and Elaine Chew. AVA: A Graphical User Interface for Automatic Vibrato and Portamento Detection and Analysis, In Proc. of the 42nd International Computer Music Conference (ICMC), September 2016.
+Luwei Yang, Khalid Z. Rajab and Elaine Chew. AVA: An Interactive System for Visual and Quantitative Analyses of Vibrato and Portamento Performance Styles, In Proc. of the 17th International Society for Music Information Retrieval Conference, 2016.
