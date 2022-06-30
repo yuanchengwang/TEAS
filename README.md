@@ -1,4 +1,5 @@
 [![zh](https://img.shields.io/badge/lang-zh-green.svg)](https://github.com/yuanchengwang/TEAS/blob/main/README-zh.md)
+[![test](https://img.shields.io/badge/语言-测试-green.svg)](https://github.com/yuanchengwang/TEAS/blob/main/README-zh.md)
 # TEAS
 TEAS: Transcription and Expressiveness Annotation System dedicated to Chinese Tranditional Instrument Pipa
 
