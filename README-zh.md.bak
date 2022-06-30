@@ -67,19 +67,19 @@
 
 ##### 一、导入降噪后的分轨音频
 
-![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-03-59-13-image.png)
+![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-03-59-13-image.png)
 
 - 在Read Audio界面中，使用`Import Denoised Wave`按钮，选择需要导入的去噪或者分离后的文件。请确保当前文件选择的弦号与`parameter_setting.m`中设置的弦号一致
 
 ##### 二、生成并修改Pitch
 
-![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-03-59-04-image.png)
+![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-03-59-04-image.png)
 
 - 前往Pitch Detection界面
 
 - 在下拉菜单中选择中意的算法
   
-  ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-00-22-image.png)
+  ![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-04-00-22-image.png)
   
   - Pyin(tony): 较快，但会损失一些时域连续性，适合技法简单的（连续）音高检测
   
@@ -111,17 +111,17 @@
     
     - 常见为八度泛音识别错误，框出错误后点击Up或者Down按钮即可
     
-    案例:![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-07-34-image.png)
+    案例:![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-04-07-34-image.png)
     
     如图所示：在88到94秒的凸起波形中存在下落的数据，观察可知下降了八度（B3->B2），解决方法：框住错误的部分，点击Up按钮
     
-    结果：![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-08-13-image.png)
+    结果：![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-04-08-13-image.png)
   
   
 
 ##### 三、生成并修改Boundaries+Notes
 
-![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-14-22-image.png)
+![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-13-14-22-image.png)
 
 - 关于边缘:
   
@@ -133,13 +133,13 @@
 
 - 单音示例
   
-  - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-27-49-image.png)
+  - ![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-13-27-49-image.png)
   
   - 如图所示，图中的灰黑色条为Note，红线为Onset,每个Note的结尾处有与第二个音开头处的Onset重叠的Offset。中间黑色的线为Pitch，图中央的单独波峰对应的是滑音
 
 - 轮指示例
   
-  - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-29-41-image.png)
+  - ![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-13-29-41-image.png)
   
   - 为了Offset检测的需要，当出现轮指时，第一个Onset标记于轮指开始的第一个波峰，第二个Onset标记于轮指的最后一次波峰
   
@@ -170,19 +170,19 @@
     
     - 注意:当第三步出现以下报错时，Onset为奇数，整体中存在错误
       
-      - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-53-18-image.png)
+      - ![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-13-53-18-image.png)
       
       - 解决办法：再修正一个错误，让整体Onset数量变成偶数后重试
     
     - 图示为一个正确的Note，前部有起震，振幅随着时间逐渐降低
       
-      - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-55-44-image.png)
+      - ![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-13-55-44-image.png)
     
     - 相应的，轮指标记出的note在上方的渲染中应为一个长音，而note图表中则是一些音不断重复的集合
       
-      - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-29-41-image.png)
+      - ![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-13-29-41-image.png)
       
-      - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-56-19-image.png)
+      - ![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-13-56-19-image.png)
     
     - 导出单轨道Midi并对应音频进行总体查错，注意漏音、错音等情况。
       点击Export Notes按钮，在弹出的目录选择框中，将文件格式由.csv修改为.mid后保存。确认保存位置后，会出现bpm确认的弹窗。如果估计的bpm值与实际值偏差较大，可以从command window中直接设置bpm
@@ -207,7 +207,7 @@
   
   - 因pitch的识别或修正错误而导致的note断开，需要对两个note进行merge操作
     
-    - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-11-47-image.png)
+    - ![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-14-11-47-image.png)
     
     - 如图所示，左边的note为该note的头，而后半因pitch的分离而导致被识别成了一个新的note
       
@@ -235,7 +235,7 @@
 
 ##### 一、识别并标记揉弦
 
-![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-28-56-image.png)
+![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-14-28-56-image.png)
 
 - 前往Vibrato Analysis页面
 
@@ -251,7 +251,7 @@
 
 ##### 二、识别并标记滑音
 
-![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-29-56-image.png)
+![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-14-29-56-image.png)
 
 - 前往Sliding Analysis页面
 
@@ -271,7 +271,7 @@
 
 ##### 三、识别并标记轮指
 
-![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-22-54-image.png)
+![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-14-22-54-image.png)
 
 - 前往Tremolo Analysis页面
 
@@ -285,7 +285,7 @@
 
 - 示例:正确的Tremolo标记
   
-  - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-28-13-image.png)
+  - ![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-14-28-13-image.png)
 
 - 点击Export Area(s)+Plucks按钮导出所有Tremolo事件范围
 
@@ -293,13 +293,13 @@
 
 ##### 四、识别并标记扫弦
 
-![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-40-43-image.png)
+![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-14-40-43-image.png)
 
 - 前往Strumming Analysis页面
 
 - 点击Multi-track Paths按钮
   
-  ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-41-49-image.png)
+  ![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-14-41-49-image.png)
 
 - 分别导入4个轨道的onset
 
@@ -317,13 +317,13 @@
 
 ##### 处理分轨或项目文件
 
-![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-34-44-image.png)
+![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-14-34-44-image.png)
 
 - 前往Multitrack+MIDI页面
 
 - 分别导入Track1 - Track4的分轨参数
   
-  ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-35-45-image.png)
+  ![](C:\Users\14862\AppData\Roaming\marktext\images\2022-06-30-14-35-45-image.png)
   
   - 分别点击Import下方与左边对应的按钮，可以选择文件的路径
     导入后点击勾选后方的确认框即可将对应内容绘制在图像上。
