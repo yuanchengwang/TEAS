@@ -126,7 +126,7 @@ The workflow of TEAS can be categorized into these steps:
   
   - Offset = The end of each MIDI note
   
-  - The fake nail used when playing the Pipa will generate a peak on level curve by touching the string. This is what we marked as the start of the note, key-on. the second peak is where the string starts to vibrates. Which leads to the fundamental of Pipa transcription: Each note has two Onsets and one Offset. 
+  - The fake nail used when playing the Pipa will generate a peak on level curve by touching the string. This is what we marked as the start of the note, key-on. the second peak is where the string starts to vibrate. Which leads to the fundamental of Pipa transcription: Each note has two Onsets and one Offset. 
 
 - Marking a sinlge note
   
