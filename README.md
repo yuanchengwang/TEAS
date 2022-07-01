@@ -304,10 +304,9 @@ The workflow of TEAS consists of following main steps:
 
 - Navigate to`Multitrack+MIDI`tab
 
-- Import Datasets for Track1 to Track4![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-35-45-image.png)
+- Import Dataset![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-35-45-image.png)
   
-  - Click on the corresponding buttons to each file types under the `Import` section to select the file path for individual datasets.
-    You can preview the data by toggling the checkbox.
+  - Import audio or music features in each track and visualize by toggling the corresponding checkbox.
 
 - Export Project or Midi file
   
@@ -316,11 +315,11 @@ The workflow of TEAS consists of following main steps:
 
 ## Preview datasets
 
-Preview dataset including JasmineFlower, NanniBay and Ambush from ten sides.
+Pipaset preview  including JasmineFlower, NanniBay and Ambush from ten sides(Section 1) is available on:
 
 https://zenodo.org/record/6760047
 
-More datasets will add on in the future.
+More pieces of music in the future.
 
 ## Todo
 - Graphic optimization
