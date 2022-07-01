@@ -164,7 +164,7 @@ The workflow of TEAS consists of following main steps:
       
       Hint: you can toggle `Plot Audio` checkbox to determine the boundary point.
     
-    - After editing Onsets, click on the `Offset Detection` button. The algorithem will automatically calculate where each Offset rendered as yellow lines.(*most of them might be overlayed by the first Onset of the next note, which you can not see*)
+    - Given the corrected onsets, detect the offsets via the `Offset Detection` button. Some of them can be invisible due to the onset overlap of the following note.
     
     - Use the `zoom` function from Matlab to improve your precision while editing boundaries. Keep retrying Offset Detection as you improve Onsets. When Offset Detection is done, you can generate Notes by simply clicking on the `Pitch2note` button. with this, you can examine errors during the marking of Boundaries. Notes will be listed in the listbox anchored on the bottom left of the page. You can click on each Note to see the detailed graph of how the Note looked like. You can delete the Note you selected by clicking on the `Delete Note` button.
     
