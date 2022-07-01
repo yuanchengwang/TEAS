@@ -9,9 +9,9 @@
 
 ## 前置准备：
 
-- 在您的计算机上安装MATLAB R2021a 或以上，并安装所有扩展Packages
+- 在您的计算机上安装MATLAB R2021a 或以上，并安装所有扩展Packages. 该平台基于Windows制作，其他操作系统可能会出问题。
 
-- 如果您需要使用`pyin(tony)`算法来使用`pitch tracker`等功能，请提前下载`sonic-annotator(64bit)`并将其安装目录添加到系统环境变量中。同时，您需要将`pyin_1.1.1.dll`粘贴到`Vamp Plugins`的安装目录，或您指定的`VAMP_PATH`目录中
+- 如果您需要使用`pyin(tony)`算法来使用`pitch tracker`等功能，请提前下载`sonic-annotator(64bit)`并将其安装目录添加到系统环境变量中。同时，您需要将`pyin_1.1.1.dll`粘贴到64位的`C:\Program Files\Vamp Plugins`的系统目录中
 
 ## 启动TEAS:
 
