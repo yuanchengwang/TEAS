@@ -68,7 +68,7 @@ The workflow of TEAS consists of following main steps:
   
   1. Multitrack+MIDI
 
-### MSS(Multichannel signal separation)
+### MSS (Multichannel signal separation)
 
 (Optional) Import audio source with mutual resonance in each track of Multitrack+MIDI tab. Then click on `Signal Separation` button to run the MSS. Export the debleeded signal from each track of Multitrack+MIDI tab. This step will effectively reduce the interference among the strings.
 
