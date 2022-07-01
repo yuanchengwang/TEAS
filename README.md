@@ -10,9 +10,9 @@
 
 ## Prerequisite：
 
-- Install MATLAB version R2021a or above, with all optional packages
+- Install MATLAB version R2021a or above, with all optional packages. This system is implemented in Windows, some issues may occur for other OS.
 
-- If you want to use`pyin(tony)`for`pitch tracker`，Please download and install`sonic-annotator(64bit)` and add its installation path to system PATH. Also, you need to put `pyin_1.1.1.dll` in `Vamp Plugins` install directory or `VAMP_PATH`.
+- If you want to use`pyin(tony)`for`pitch tracker`，Please download and install`sonic-annotator(64bit)` and add its installation path to system PATH. Also, you need to put `pyin_1.1.1.dll` in `C:\Program Files\Vamp Plugins`.
 
 ## Staring up TEAS:
 
