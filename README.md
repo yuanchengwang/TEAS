@@ -12,11 +12,11 @@
 
 - Install MATLAB version R2021a or above, with all optional packages
 
-- If you want to use`pyin(tony)`for`pitch tracker`，Please download and install`sonic-annotator(64bit)` and add its install location to system PATH. Also, you need to put `pyin_1.1.1.dll` in `Vamp Plugins` install directory or`VAMP_PATH`.
+- If you want to use`pyin(tony)`for`pitch tracker`，Please download and install`sonic-annotator(64bit)` and add its installation path to system PATH. Also, you need to put `pyin_1.1.1.dll` in `Vamp Plugins` install directory or `VAMP_PATH`.
 
 ## Staring up TEAS:
 
-- Create a new folder for your project according to our example datasets. This is for convinence and maintainability.
+- Create a new folder for your project according to our dataset preview.
   
   - File types and recommended naming scheme
     
@@ -32,9 +32,9 @@
       
       Example:    `NanniBay_source1_pitch_str1_original.csv`
     
-    <u>(*):</u>TEAS will automatically decide what name it should be saved as based on your settings in string number and name of the audio source. 
+    <u>(*):</u>TEAS will automatically determine what name it should be saved via string number and name of the audio source. 
 
-- Set string properties, initial guess of BPS, etc in`parametersetting.m`. Set synthesizer parameters for MIDI in `protocolsetting.m` if you need special export for midi like the midi mode. All parameters are set by default specific to our study target, PIPA.
+- Set `string_index`, initial guess of BPS, etc in `parametersetting.m`. Set synthesizer parameters for MIDI in `protocolsetting.m` if requiring synthesizer protocol(e.g. control keys) for MIDI export. All parameters are set specific to our study target, PIPA.
 
 - Run `GUI_Main.m`. You should see the default tab of TEAS: Read Audio
 
@@ -42,9 +42,9 @@
 
 ## TEAS Workflow:
 
-The workflow of TEAS can be categorized into these steps:
+The workflow of TEAS consists of following main steps:
 
-- [MSS(Multichannel signal separation)(Optional)](#MMS)
+- [MSS(Multichannel signal separation)(Optional)](#MSS)
 
 - [I, AMT(Automatic music transcription)](#AMT)
   
@@ -70,7 +70,7 @@ The workflow of TEAS can be categorized into these steps:
 
 ### MSS
 
-(Optional) Import audio sources with string sound leakage in Multitrack+MIDI tab. then click on `Signal Separation` button to process the audio. Export the audio after the calculation process.(Optional)
+(Optional) Import audio source with mutual resonance in each track of Multitrack+MIDI tab. Then click on `Signal Separation` button to run the MSS. Export the audio in each track of Multitrack+MIDI tab.
 
 ### AMT
 
@@ -78,7 +78,7 @@ The workflow of TEAS can be categorized into these steps:
 
 ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-03-59-13-image.png)
 
-- Under tab `ReadAudio`, import Denoised/Separated audio source with `Import Denoised Wave` button. Make sure you are importing the same string number as what you have set in `parameter_settings.m`
+- Under tab `ReadAudio`, import Denoised/debleeded audio source with `Import Denoised Wave` button. Make sure the string number of imported audio is the same as set in `parameter_settings.m`
 
 ##### Pitch Detection
 
@@ -90,13 +90,13 @@ The workflow of TEAS can be categorized into these steps:
   
   ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-00-22-image.png)
   
-  - Pyin(tony): Fastest, but the result lack detail in articulation such as vibrato and portamento, which is not useful in our case focusing on a rich articulation instrument - Chinese Pipa.
+  - pYin(tony): Fastest, good pitch detector with insufficient consistency in time for articulation like tremolo.
   
-  - BNLS: Slower, but result in many detailed pitch movements. generate more noise than Pyin so you have to manually crop them. Good for emotional articulation analysis.
+  - BNLS: Slowest, better consistency in time but slightly worse in pitch. Rough manual crop for the pitch curve is required. More appropriate for complex articulation analysis.
   
-  - When the algorithm calculation is complete, edit the result slightly then click `Export Pitch Curve` button to export the dataset to desired location. It's recommended to keep a backup of the untouched original Pitch file for later use.  You can save it with  `_original` at the end of the filename. 
+  - When the calculation is complete, edit the result then click `Export Pitch Curve` button to export the pitch curve to desired path. It's recommended to keep a backup of the untouched original pitch file for later use.  You can save it with  `_original` at the end of the filename. 
 
-- About Pitch editing:
+- About pitch editing:
   
   - Pitch only serve as a frequency data for individul note(s). you should only remove the pitch which comes from other string's vibration. Instead, you should keep as much as you can for better Edge modification later and higher accuracy on Note detection.Under some circumstances there will be Octave offset for pitch, you can fix them in the `Examples for Editing Pitch` down below.
   
@@ -104,9 +104,9 @@ The workflow of TEAS can be categorized into these steps:
   
   - Save and export Pitch Curve
     
-    - How to export：Click on the `Export Pitch Curve` button, select the location you wish to save the dataset.
+    - How to export：Click on the `Export Pitch Curve` button, select the saving path.
     
-    - How to import：Click on the `Import Pitch Curve` button, select the dataset you wish to load.
+    - How to import：Click on the `Import Pitch Curve` button, select the loading path.
 
 - Tutorials for Editing Pitch:
   
@@ -116,7 +116,7 @@ The workflow of TEAS can be categorized into these steps:
     
     - Examine the energy graph behind Pitch curve, When you find Pitch curve with no obvious energy indication, that usually means the Pitch is either leaked from other string. Remove them by selecting the range of defective Pitch and edit the frequency of it to `0`.
     
-    - Pitch tracker sometimes don't work very well on identifying Octaves. You can select the offset Pitch and move it all by Octaves by pressing the `Up` or the `Down` button.
+    - Pitch tracker sometimes don't work very well on identifying Octaves. You can select the offset Pitch and move it all by Octaves by clicking the `Up` or the `Down` button.
     
     Pitch editing examples:![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-07-34-image.png)
     
@@ -154,9 +154,9 @@ The workflow of TEAS can be categorized into these steps:
   
   - Methods to remove Onsets/Offsets/Notes:
     
-    - Click on the Onset/Offset/Note you wish to delete, then Click on `Delete Onset` or `Detele Offset` or `Delete Note`, or simply hit `Backspace` on your keyboard. Do not click in the note if you are trying to edit the Boundary. move your mouse cursor upper or lower for directly selecting  the boundary.
+    - Click on the Onset/Offset/Note you wish to delete, then Click on `Delete Onset` or `Detele Offset` or `Delete Note`, or simply keypress `Backspace`. Do not click in the note if you are trying to edit the Boundary. move your mouse cursor upper or lower for directly selecting  the boundary.
     
-    - You can speed up the workflow by Using the `Select Boundary Area` button. after doing so, you can select all Onsets and Offsets in a certain area, and choose to either delete only Onset or Offset with the corresponding button, or hit `Backspace` on your keyboard to remove everything.
+    - You can speed up the workflow by Using the `Select Boundary Area` button. after doing so, you can select all Onsets and Offsets in a certain area, and choose to either delete only Onset or Offset with the corresponding button, or keypress `Backspace` on to remove all selected boundaries.
   
   - Methods to add boundaries:
     
@@ -172,7 +172,7 @@ The workflow of TEAS can be categorized into these steps:
     
     - After editing Onsets, click on the `Offset Detection` button. The algorithem will automatically calculate where each Offset should be. they will be rendered as vertical yellow lines.(*most of them might be overlayed by the first Onset of the next note, which you can not see*)
     
-    - Use the `zoom` function from Matlab to improve your precision while editing boundaries. Keep retrying Offset Detection as you improve Onsets. When Offset Detection is done, you can generate Notes by simply clicking on the `Pitch2note` button. with this, you can examine errors during the marking of Boundaries. Notes will be listed in the listbox anchored on the bottom left of the page. You can click on each Note to see the detailed graph of how the Note looked like. You can delete the Note you selected by pressing on the `Delete Note` button.
+    - Use the `zoom` function from Matlab to improve your precision while editing boundaries. Keep retrying Offset Detection as you improve Onsets. When Offset Detection is done, you can generate Notes by simply clicking on the `Pitch2note` button. with this, you can examine errors during the marking of Boundaries. Notes will be listed in the listbox anchored on the bottom left of the page. You can click on each Note to see the detailed graph of how the Note looked like. You can delete the Note you selected by clicking on the `Delete Note` button.
     
     - Caution: When `Offset Detection` or `Pitch2note` gives you this warning, fix one more defective Onset before you procceed. This is due to how Pipa uses two Onsets for each Note, odd number for quantity of Onsets is not allowed.
       
@@ -194,15 +194,15 @@ The workflow of TEAS can be categorized into these steps:
     
     - Boundaries:
       
-      - How to export：Click on the`Export Boundaries` button,select the location you wish to save the dataset.
+      - How to export：Click on the`Export Boundaries` button,select the path to save the boundary.
       
-      - How to import：Click on the`Import Boundaries` button,select the dataset you wish to load.
+      - How to import：Click on the`Import Boundaries` button,select the boundary file to load.
     
     - Note:
       
-      - How to export：Click on the`Export Notes` button,select the location you wish to save the dataset.
+      - How to export：Click on the`Export Notes` button,select the path to save the dataset.
       
-      - How to import：Click on the`Import Notes` button,select the dataset or mid file you wish to load.
+      - How to import：Click on the`Import Notes` button,select the dataset or mid file to load.
       
       - Caution： Default Midi control key is generated based on Ample China Pipa. You can adjust these settings in `protocolsettings.m`
 
@@ -288,9 +288,9 @@ NOTE: `sliding`/`sliding out` uses the Pitch before the slide, while `sliding in
 
 - Click on `Get Tremolo(s)` button to calculate the plucks in each Note.
 
-- Examine each Note. If the Note is just a regualr Note, there should be only one pluck at the peak level of the Note. If there is more than one pluck for a normal Note, delete the redundant ones by click on the pluck then click on the `Delete Pluck` button, or simply hitting the `Backspace` key on your keyboard.
+- Examine each Note. If the Note is just a regualr Note, there should be only one pluck at the peak level of the Note. If there is more than one pluck for a normal Note, delete the redundant ones by click on the pluck then click on the `Delete Pluck` button, or simply keypress `Backspace` key.
 
-- If a Tremolo Note is found, examine whether there are two plucks on every single Note where one is at the start and the other at the end, except for the last Note which we only put one pluck on the start of the Note. You should add the missing pluck in a tremolo by clicking on `Add Pluck` button and click on where you wish the pluck to be. Delete the defective ones with `Delete Pluck` button, or hitting `Backspace` key on your keyboard.
+- If a Tremolo Note is found, examine whether there are two plucks on every single Note where one is at the start and the other at the end, except for the last Note which we only put one pluck on the start of the Note. You should add the missing pluck in a tremolo by clicking on `Add Pluck` button and click on approximate pluck position. Delete the defective ones with `Delete Pluck` button, or keypress `Backspace`.
 
 - Choose the correct `Type` for each tremolo.
 
@@ -318,7 +318,7 @@ NOTE: for the 2nd and the 3rd string, default Tremolo type is `shaking`.
 
 - Click on the `Get Strumming(s)`button.
 
-- Filter the Correct Strumming sequence, use `Delete Strumming` button or `Backspace` key on your keyboard to delete defective Strumming sequences.
+- Filter the Correct Strumming sequence, use `Delete Strumming` button or key press `Backspace` to delete defective Strumming sequences.
 
 - Choose the correct Type for each Strumming Note on the right side panel.
 
@@ -353,14 +353,14 @@ https://zenodo.org/record/6760047
 More datasets will add on in the future.
 
 ## Todo
-
-- More and better detection algorithms.
-- MPE,(music)XML,JAMS exports
-- MIDI protocols
+- Graphic optimization
+- More and better algorithms
+- MPE,(music)XML,JAMS format support
+- MIDI protocol
 
 ## Citation
 
-For Academic Use: If you are using this platform in research work for publication, please cite: Yuancheng Wang, Yuyang Jing, Wei Wei, Dorian Cazau, Olivier Adam, Qiao Wang. PipaSet and TEAS: A Multimodal Dataset and Annotation Platform for Automatic Music Transcription and Expressive Analysis dedicated to Chinese Plucked String Instrument Pipa. IEEE ACCESS, 2022.
+For Academic Use: If you are using this platform in research work for publication, please cite: Yuancheng Wang, Yuyang Jing, Wei Wei, Dorian Cazau, Olivier Adam, Qiao Wang. PipaSet and TEAS: A Multimodal Dataset and Annotation Platform for Automatic Music Transcription and Expressive Analysis dedicated to Chinese Plucked String Instrument Pipa (In review). IEEE ACCESS, 2022.
 
 The original code is based on the Luwei Yang's work: If you are using AVA in research work for publication, please cite: https://luweiyang.com/research/ava-project
 Luwei Yang, Khalid Z. Rajab and Elaine Chew. AVA: A Graphical User Interface for Automatic Vibrato and Portamento Detection and Analysis, In Proc. of the 42nd International Computer Music Conference (ICMC), September 2016.
