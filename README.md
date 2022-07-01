@@ -92,9 +92,9 @@ The workflow of TEAS consists of following main steps:
   
   - pYin(tony): Fastest, good pitch detector with insufficient consistency in time for articulation like tremolo.
   
-  - BNLS: Slowest, better consistency in time but slightly worse in pitch. Rough manual crop for the pitch curve is required. More appropriate for complex articulation analysis.
+  - BNLS: Slowest, better consistency in time but slightly worse in pitch. Rough crop for the pitch curve is required. More appropriate for complex articulation analysis.
   
-  - When the calculation is complete, edit the result then click `Export Pitch Curve` button to export the pitch curve to desired path. It's recommended to keep a backup of the untouched original pitch file for later use.  You can save it with  `_original` at the end of the filename. 
+  - It's recommended to keep a backup of the untouched original pitch file for later use.  We save it with  `_original` at the end of the filename. 
 
 - About pitch editing:
   
