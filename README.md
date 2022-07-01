@@ -34,7 +34,7 @@
     
     <u>(*):</u>TEAS will automatically determine the default file name via string index and name of the audio source. 
 
-- Configure the parameters like `string_index`, initial guess of 'beats_per_second' etc in `parametersetting.m`, in addition of synthesizer MIDI setting in `protocolsetting.m` if requiring control keys. All parameters are set specific to our study target, pipa and MIDI output follows the setting of the Ample China Pipa(ACP) synthesizer.
+- Configure the parameters like `string_index`, initial guess of 'beats_per_second' etc in `parametersetting.m`, in addition of synthesizer MIDI setting in `protocolsetting.m` if requiring control keys. All parameters are set specific to our study target, pipa and MIDI output follows the setting of the Ample China Pipa (ACP) synthesizer.
 
 - Run `GUI_Main.m` to launch the platform
 
@@ -52,7 +52,7 @@ The workflow of TEAS consists of following main steps:
   
   2. Pitch Detection
   
-  3. Note Detection
+  3. Note Segmentation
 
 - [II, EA(Expressive Analysis)](#EA)
   
@@ -86,39 +86,37 @@ The workflow of TEAS consists of following main steps:
 
 - Navigate to `Pitch Detection` tab
 
-- Select the desired algorithm for pitch tracking.
+- Select an algorithm for pitch tracking.
   
   ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-00-22-image.png)
   
-  - pYin(tony): Fastest, good pitch detector with insufficient consistency in time for articulation like tremolo.
+  - pYin(tony): Fastest, great pitch detector with insufficient consistency in time for articulation like tremolo.
   
-  - BNLS: Slowest, better consistency in time but slightly worse in pitch. Rough crop for the pitch curve is required. More appropriate for complex articulation analysis.
+  - BNLS: Slowest, better consistency in time but slightly worse in pitch. Rough crop for the pitch curve is required (Recommended for complex articulation cases).
   
-  - Keeping a backup of the untouched original pitch file is recommended for later use. We save it with  `_original` at the end of the filename. 
+  - A backup of the roughly processed original pitch file is recommended for later use. We save it with  `_original` at the end of the filename. 
 
-- About pitch editing:
+- Pitch editing:
   
-  - Pitch curve from other string's vibration is recommended to mannually remove. 
+  - Pitch curve from other string's vibration is recommended to manually remove. Hint: Playback is provided. 
   
-  - Hint: Playback is provided. 
-  
-  - Save and export Pitch Curve
+  - Import and export Pitch Curve
     
     - How to export：Click on the `Export Pitch Curve` button, select the saving path.
     
     - How to import：Click on the `Import Pitch Curve` button, select the loading path.
   
-  - When pitch tracking gives incorrect result
+  - Pitch error correction
     
-    - Select the defective pitch after clicking the `Select Pitch Area` button or select a single point by clicking directly on the pitch curve, input the desired pitch value in `single point modification` then click the `Modify` button.
+    - Select the defective pitch segment after clicking the `Select Pitch Area` button or select a single point by clicking directly on the pitch curve, input the desired pitch value in `single point modification` then click the `Modify` button.
     
-    - Through the spectrogram behind pitch curve, remove them by selecting the defective range and set the pitch to `0`.
+    - Through the spectrogram behind pitch curve and playback, set the pitch value of unvoiced area to `0`.
     
     - Octave error may occur. Select the area and octave up or down by `Up` or the `Down` button.
     
     Pitch editing examples:![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-07-34-image.png)
     
-    As shown in the figure: octave error in pitch curve located within 88 and 94 seconds.(B3-> B2), <u>Solution to this problem</u>: select the defective interval and click the `Up` button.
+    As shown in the figure: octave error in pitch curve located within 88 and 94 seconds.(B3-> B2), <u>Solution to this problem</u>: select the defective area and click the `Up` button.
     
     Result：![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-08-13-image.png)
 
