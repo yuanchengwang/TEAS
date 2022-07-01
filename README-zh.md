@@ -207,25 +207,7 @@
       
       - 载入的方法：点击`Import Notes`按钮，前往项目目录并选定之前保存好的csv/mid文件，注意： Mid默认control key是基于Ample China Pipa(ACP)来做的，可以在调整`protocolsetting.m`中调整
 
-- 实际案例:
-  
-  - 当以下情况情况出现时，需要对note进行修正。
-  
-  - 因pitch的识别或修正错误而导致的note断开，需要对两个note进行merge操作。
-    
-    - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-11-47-image.png)
-    
-    - 如图所示，左边的note为该note的头，而后半因pitch的分离而导致被识别成了一个新的note
-      
-      - 可选方案1: 修正pitch，再重导入boundaries后进行pitch2note
-        
-        - 对前方低八度的pitch进行移高八度处理（使用up按钮即可）
-        
-        - 处理结果：
-        
-        - <img title="" src="https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-12-36-image.png" alt="" width="184" data-align="left">
-      
-      - 可选方案2: 直接修改note的位置
+-  修改note
         
         - 记录左侧note的头位置（点击高亮该note，最左下方的输入框内会显示当前选中note的信息）<img src="https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-15-30-image.png" title="" alt="" width="307">
         
