@@ -107,20 +107,18 @@ The workflow of TEAS consists of following main steps:
     - How to export：Click on the `Export Pitch Curve` button, select the saving path.
     
     - How to import：Click on the `Import Pitch Curve` button, select the loading path.
-
-- Tutorials for Editing Pitch:
   
   - When pitch tracking gives incorrect result
     
     - Select the defective pitch after clicking the `Select Pitch Area` button or select a single point by clicking directly on the pitch curve, input the desired pitch value in `single point modification` then click the `Modify` button.
     
-    - Examine the energy graph behind Pitch curve, When you find Pitch curve with no obvious energy indication, that usually means the Pitch is either leaked from other string. Remove them by selecting the range of defective Pitch and edit the frequency of it to `0`.
+    - Through the spectrogram behind pitch curve, remove them by selecting the range of defective area and set the pitch to `0`.
     
-    - Pitch tracker sometimes don't work very well on identifying Octaves. You can select the offset Pitch and move it all by Octaves by clicking the `Up` or the `Down` button.
+    - Octave error may occur. Select the area and octave up or down by `Up` or the `Down` button.
     
     Pitch editing examples:![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-07-34-image.png)
     
-    As shown in the figure: Falling datapoints in the Pitch curve from 88 to 94 seconds, indicated that the Pitch tracker have mistaken the Octave.(B3-> B2), <u>Solution to this problem</u>: select the defective part of the Pitch curve, click the `Up` button.
+    As shown in the figure: octave error in pitch curve located within 88 and 94 seconds.(B3-> B2), <u>Solution to this problem</u>: select the defective part and click the `Up` button.
     
     Result：![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-08-13-image.png)
 
@@ -134,43 +132,39 @@ The workflow of TEAS consists of following main steps:
   
   - Offset = The end of each MIDI note
   
-  - The fake nail used when playing the Pipa will generate a peak on level curve by touching the string. This is what we marked as the start of the note, key-on. the second peak is where the string starts to vibrate. Which leads to the fundamental of Pipa transcription: Each note has two Onsets and one Offset. 
+  - The fake nail will produce a crisp soudn and envelope peak when touching the string. This serves to the note onset, i.e. key-on. The second peak points out the natural transient from the string which leads to the strength/velocity estimation: Each note has two onsets and a single offset for pipa case.
 
-- Marking a sinlge note
+- Single Note Annotation
   
   - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-27-49-image.png)
   
-  - As shown in the figure:Notes are shown as gray stripes.Vertical red lines are Onsets.There is a Yellow vertical line inbetween the end of each note and the start of the next, which is overlayed by the first Onset of each note. The single peak in the center of the graph is representing a portamento, as the Pitch curve falls down while the note is still playing.
+  - As shown in the figure: Notes are shown as gray rectangles. Red lines represent onset points. Yellow lines indicate the offset which may be covered by the onsets of the subsequent notes. 
 
-- Marking Tremolo(s)
+- Note annotation in Tremolo case 
   
   - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-29-41-image.png)
   
-  - For properly detecting Offset for Tremolos, we need to mark the first and the last level peak for the Tremolo note.
+  - Only the first and the last peak for the Tremolo note need to mark.
   
-  - As shown in the figure: The first and last level peak is maked as Onsets.
-
-- Tutorials on marking Note
-  
-  - Methods to remove Onsets/Offsets/Notes:
+  - To remove Onsets/Offsets/Notes:
     
     - Click on the Onset/Offset/Note you wish to delete, then Click on `Delete Onset` or `Detele Offset` or `Delete Note`, or simply keypress `Backspace`. Do not click in the note if you are trying to edit the Boundary. move your mouse cursor upper or lower for directly selecting  the boundary.
     
     - You can speed up the workflow by Using the `Select Boundary Area` button. after doing so, you can select all Onsets and Offsets in a certain area, and choose to either delete only Onset or Offset with the corresponding button, or keypress `Backspace` on to remove all selected boundaries.
   
-  - Methods to add boundaries:
+  - To add offset:
     
-    - Click on `Add Onset` or `Add Offset` button, then click on level peaks near anywhere you wish to create a Onset or a Offset.
+    - Click on `Add Onset` button, then click on an approximate location of peak(the closest peak will be chosen for onset).
   
   - Basic workflow of Note detection:
     
-    - Click on `Onset Detection` button, the algorithm will find every single level peak(*higher precision will have more False Positive outcome*), and mark them all as Onsets. they will be rendered as vertical red lines. 
+    - Click on `Onset Detection` button, the algorithm will find potential peaks (*High false positive outcome*), and mark them all as Onsets rendered as red lines. 
     
     - Remove all detective Onsets from Pitch leakage or Tremolo. You may edit them cautiously one-by-one, or use `Select Boundary Area` to speed up this process. 
       
       Hint: you can toggle `Plot Audio` checkbox to speed up the process by looking at where the note should be.
     
-    - After editing Onsets, click on the `Offset Detection` button. The algorithem will automatically calculate where each Offset should be. they will be rendered as vertical yellow lines.(*most of them might be overlayed by the first Onset of the next note, which you can not see*)
+    - After editing Onsets, click on the `Offset Detection` button. The algorithem will automatically calculate where each Offset should be. they will be rendered as yellow lines.(*most of them might be overlayed by the first Onset of the next note, which you can not see*)
     
     - Use the `zoom` function from Matlab to improve your precision while editing boundaries. Keep retrying Offset Detection as you improve Onsets. When Offset Detection is done, you can generate Notes by simply clicking on the `Pitch2note` button. with this, you can examine errors during the marking of Boundaries. Notes will be listed in the listbox anchored on the bottom left of the page. You can click on each Note to see the detailed graph of how the Note looked like. You can delete the Note you selected by clicking on the `Delete Note` button.
     
