@@ -44,7 +44,7 @@
 
 The workflow of TEAS consists of following main steps:
 
-- [MSS(Multichannel signal separation)(Optional)](#MSS(Multichannel signal separation))
+- [MSS(Multichannel signal separation)(Optional)](#MSS)
 
 - [I, AMT(Automatic music transcription)](#AMT)
   
