@@ -88,13 +88,13 @@ The workflow of TEAS can be categorized into these steps:
   
   - BNLS: Slower, but result in many detailed pitch movements. generate more noise than Pyin so you have to manually crop them. Good for emotional articulation analysis.
   
-  - When the algorithm calculation is complete, edit the result slightly then press Export Pitch Curve button to export the dataset to desired location. It's recommended to keep a backup of the untouched original Pitch file for later use.  You can save it with  `_original` at the end of the filename. 
+  - When the algorithm calculation is complete, edit the result slightly then click `Export Pitch Curve` button to export the dataset to desired location. It's recommended to keep a backup of the untouched original Pitch file for later use.  You can save it with  `_original` at the end of the filename. 
 
 - About Pitch editing:
   
   - Pitch only serve as a frequency data for individul note(s). you should only remove the pitch which comes from other string's vibration. Instead, you should keep as much as you can for better Edge modification later and higher accuracy on Note detection.Under some circumstances there will be Octave offset for pitch, you can fix them in the `Examples for Editing Pitch` down below.
   
-  - If you are feeling lost while editing Pitch, you can directly click on audio wave graph on top to playback the audio from where you clicked. Use the Stop button to stop the audio playback.
+  - If you are feeling lost while editing Pitch, you can directly click on audio wave graph on top to playback the audio from where you clicked. Use the `Stop` button to stop the audio playback.
   
   - Save and export Pitch Curve
     
@@ -106,15 +106,15 @@ The workflow of TEAS can be categorized into these steps:
   
   - When Pitch tracking gives incorrect result
     
-    - To select the defective Pitch data, click on the `Select Pitch Area` button, hold your left mouse button and drag on the Pitch graph to make a selection, or select a single point by doing left click on certain Pitch point, input the desired value in the text input box below `single point modification`then click on the `modify`button.
+    - To select the defective Pitch data, click on the `Select Pitch Area` button, hold your left mouse button and drag on the pitch curves to make a selection, or select a single point by doing left click on certain Pitch point, input the desired value in the text input box below `single point modification`then click on the `modify` button.
     
     - Examine the energy graph behind Pitch curve, When you find Pitch curve with no obvious energy indication, that usually means the Pitch is either leaked from other string. Remove them by selecting the range of defective Pitch and edit the frequency of it to `0`.
     
-    - Pitch tracker sometimes don't work very well on identifying Octaves. You can select the offset Pitch and move it all by Octaves by pressing the `Up` and the `Down` button.
+    - Pitch tracker sometimes don't work very well on identifying Octaves. You can select the offset Pitch and move it all by Octaves by pressing the `Up` or the `Down` button.
     
     Pitch editing examples:![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-07-34-image.png)
     
-    As shown in the figure: Falling datapoints in the Pitch curve from 88 to 94 seconds, indicated that the Pitch tracker have mistaken the Octave.(B3-> B2), <u>Solution to this problem</u>: select the defective part of the Pitch curve, click the Up button.
+    As shown in the figure: Falling datapoints in the Pitch curve from 88 to 94 seconds, indicated that the Pitch tracker have mistaken the Octave.(B3-> B2), <u>Solution to this problem</u>: select the defective part of the Pitch curve, click the `Up` button.
     
     Result：![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-08-13-image.png)
 
@@ -182,21 +182,21 @@ The workflow of TEAS can be categorized into these steps:
       
       - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-56-19-image.png)
     
-    - You can export currently marked Notes as a single-channel Midi file for overall examination by pressing the `Export Notes`button, and then change the format from  `.csv` to `.mid`. There will be prompts to tell you informations about BPM guessing and how to set your own initial guess of BPM. When examinating, pay attention to missing Notes/Notes with wrong Pitch.
+    - You can export currently marked Notes as a single-channel Midi file for overall examination by clicking the `Export Notes` button, and then change the format from  `.csv` to `.mid`. There will be prompts to tell you informations about BPM guessing and how to set your own initial guess of BPM. When examinating, pay attention to missing Notes/Notes with wrong Pitch.
   
   - Import and Export of Boundaries and Notes
     
     - Boundaries:
       
-      - How to export：Click on the`Export Boundaries`button,select the location you wish to save the dataset.
+      - How to export：Click on the`Export Boundaries` button,select the location you wish to save the dataset.
       
-      - How to import：Click on the`Import Boundaries`button,select the dataset you wish to load.
+      - How to import：Click on the`Import Boundaries` button,select the dataset you wish to load.
     
     - Note:
       
-      - How to export：Click on the`Export Notes`button,select the location you wish to save the dataset.
+      - How to export：Click on the`Export Notes` button,select the location you wish to save the dataset.
       
-      - How to import：Click on the``button,select the dataset or mid file you wish to load.
+      - How to import：Click on the`Import Notes` button,select the dataset or mid file you wish to load.
       
       - Caution： Default Midi control key is generated based on Ample China Pipa. You can adjust these settings in `protocolsettings.m`
 
@@ -246,7 +246,7 @@ The workflow of TEAS can be categorized into these steps:
 
 - Click on the `Export Area(s)`button to export all Vibrato range.
 
-- Click on the `Export All` button to export all Vibrato parameters.
+- Click on the `Export Parameters` button to export all Vibrato parameters.
 
 NOTE1: Please remeber to choose vibrato/trill/bending types manually.
 
@@ -260,7 +260,7 @@ NOTE2: Vibrato will automatically resize between the second Onset to the Offset 
 
 - Click on the `Vibrato-free Pitch`button. This wil filter out all the Pitch where Vibratos have already been recognized to improve the accuracy of Sliding Detection.
 
-- Click on the`Get Sliding(s)` button simultaneously, while examinating by hearing each Sliding in the Slidings list. The more you press, the more results will come out. Please do not press the button for too many times, which will lead to over-smoothing artifact and break the result.
+- Click on the`Get Sliding(s)` button simultaneously, while examinating by hearing each Sliding in the Slidings list. More you click, More intervals generate. Please do not click the button for too many times, which will lead to over-smoothing artifact and break the result.
 
 - Examine the Slidings result by listening to them and remove the defective result.
 
@@ -270,7 +270,7 @@ NOTE2: Vibrato will automatically resize between the second Onset to the Offset 
 
 - Click on the `Logistics Model` button to calculate Logistics Model.
 
-- Click on the `Export All` button to export all Sliding parameters.
+- Click on the `Export Parameters` button to export all Sliding parameters.
 
 NOTE: `sliding`/`sliding out` uses the Pitch before the slide, while `sliding in` uses the Pitch after the slide
 
@@ -308,7 +308,7 @@ NOTE: for the 2nd and the 3rd string, default Tremolo type is `shaking`.
   
   ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-41-49-image.png)
 
-- Import Onset for all the tracks, select the imported Onsets and click on the`test and plot` button. The starting point of each note is rendered in the graph.
+- Import Onset for all the tracks, select the priority with `Imported` and click on the `Test and plot onsets` button. The starting point of each note is rendered in the graph.
 
 - Click on the `Get Strumming(s)`button.
 
