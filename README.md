@@ -64,21 +64,21 @@ The workflow of TEAS consists of following main steps:
   
   4. Strumming Analysis
 
-- [III, Multitrack](#Multitrack)
+- [III, Multitrack Visualization and MIDI export](#Multitrack)
   
   1. Multitrack+MIDI
 
-### MSS (Multichannel signal separation)
+### MSS
 
 (Optional) Import audio source with mutual resonance in each track of Multitrack+MIDI tab. Then click on `Signal Separation` button to run the MSS. Export the debleeded signal from each track of Multitrack+MIDI tab. This step will effectively reduce the interference among the strings.
 
 ### AMT
 
-##### Import denoised audio source
+##### Import audio source
 
 ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-03-59-13-image.png)
 
-- Under tab `ReadAudio`, import Denoised/debleeded audio source with `Import Denoised Wave` button. Make sure the string number of imported audio is the same as set in `parameter_settings.m`
+- Under `ReadAudio` tab, import denoised/debleeded audio source with `Import Denoised Wave` button. Make sure the string index of imported audio is the same as set in `parametersettings.m`
 
 ##### Pitch Detection
 
@@ -86,7 +86,7 @@ The workflow of TEAS consists of following main steps:
 
 - Navigate to `Pitch Detection` tab
 
-- Select the desired algorithm for Pitch tracking.
+- Select the desired algorithm for pitch tracking.
   
   ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-00-22-image.png)
   
