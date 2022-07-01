@@ -11,7 +11,7 @@
 
 - 在您的计算机上安装MATLAB R2021a 或以上，并安装所有扩展Packages
 
-- 如果您需要使用`pyin(tony)`算法来使用`pitch tracker`等功能，请提前下载`sonic-annotator(64bit)`并将其安装目录添加到系统环境变量中。同时，您需要将`pyin_1.1.1.dll`存放到`Vamp Plugins`的安装目录，或您指定的`VAMP_PATH`目录中
+- 如果您需要使用`pyin(tony)`算法来使用`pitch tracker`等功能，请提前下载`sonic-annotator(64bit)`并将其安装目录添加到系统环境变量中。同时，您需要将`pyin_1.1.1.dll`粘贴到`Vamp Plugins`的安装目录，或您指定的`VAMP_PATH`目录中
 
 ## 启动TEAS:
 
@@ -33,7 +33,7 @@
     
     <u>(*):</u>TEAS会自动通过弦号定义和音频源文件在导出文件时提供标准化的名称
 
-- 第二步:    在`parameter_setting.m`文件中设定基础参数，如：弦号定义、导出MIDI时的预估BPM等。如果您对MIDI输出有其他需求，可以在`prototype_setting.m`中依照您需要的输出方式进行设置。TEAS的默认参数设置都以琵琶为基础
+- 第二步:    在`parametersetting.m`文件中设定基础参数，如：弦号定义、导出MIDI时的预估BPM等。如果您对MIDI输出有其他需求，可以在`protocolsetting.m`中依照您需要的输出方式进行设置。TEAS的默认参数设置都以琵琶为基础
 
 - 第三步:    运行`GUI_Main.m`文件，您将看到TEAS的默认页面: Read Audio
 
@@ -88,12 +88,12 @@
   
   ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-00-22-image.png)
   
-  - Pyin(tony): 较快，但会损失一些时域连续性，适合技法简单的（连续）音高检测
+  - Pyin(tony): 较快，但会损失一些时域连续性，适合技法简单的（连续）音高检测，复杂技巧例如轮指会出现连续性不够的问题
   
   - BNLS: 较慢，方便后续的技法标记，时域连续性较好，但同时音高稳定性较弱
     (TEAS的标记对象为琵琶，建议选BNLS)
   
-  - 算法运行完毕后，对音高进行适当修正和清理后，点击`Export Pitch Curve`按钮，前往项目目录，并将默认名称后面加上`_original`后导出，作为参照与备份
+  - 建议临时保存用来帮助后期使用, 例如在默认名称后面加上`_original`后导出，作为参照与备份
 
 - Pitch修正中的注意事项:
   
