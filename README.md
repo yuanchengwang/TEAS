@@ -94,13 +94,13 @@ The workflow of TEAS consists of following main steps:
   
   - BNLS: Slowest, better consistency in time but slightly worse in pitch. Rough crop for the pitch curve is required. More appropriate for complex articulation analysis.
   
-  - It's recommended to keep a backup of the untouched original pitch file for later use.  We save it with  `_original` at the end of the filename. 
+  - Keeping a backup of the untouched original pitch file is recommended for later use. We save it with  `_original` at the end of the filename. 
 
 - About pitch editing:
   
-  - Pitch curve serves to the discrete MIDI pitch value estimation for each note. you could remove the part from other string's vibration. Instead, you should keep as much as you can for better boundary and Note detection. In case of octave error, you can fix them as described in the `Examples for Editing Pitch` below.
+  - Pitch curve from other string's vibration is recommended to mannually remove. 
   
-  - If you are feeling lost while editing pitch, you can directly click on audio wave graph on top to playback the audio from where you clicked. Use the `Stop` button to stop the audio playback.
+  - Playback is provided. 
   
   - Save and export Pitch Curve
     
@@ -110,9 +110,9 @@ The workflow of TEAS consists of following main steps:
 
 - Tutorials for Editing Pitch:
   
-  - When Pitch tracking gives incorrect result
+  - When pitch tracking gives incorrect result
     
-    - To select the defective Pitch data, click on the `Select Pitch Area` button, hold your left mouse button and drag on the pitch curves to make a selection, or select a single point by doing left click on certain Pitch point, input the desired value in the text input box below `single point modification`then click on the `modify` button.
+    - Select the defective pitch after clicking the `Select Pitch Area` button or select a single point by clicking directly on the pitch curve, input the desired pitch value in `single point modification` then click the `Modify` button.
     
     - Examine the energy graph behind Pitch curve, When you find Pitch curve with no obvious energy indication, that usually means the Pitch is either leaked from other string. Remove them by selecting the range of defective Pitch and edit the frequency of it to `0`.
     
