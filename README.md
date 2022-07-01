@@ -10,11 +10,11 @@
 
 ## Prerequisite：
 
-- Install MATLAB version R2021a or above, with all optional packages. This system is implemented in Windows, some issues may occur for other OS.
+- Install MATLAB version R2021a or above, with all optional packages. This system is implemented on Windows, some issues may occur for other OS.
 
-- If you want to use`pyin(tony)`for`pitch tracker`, please download and install`sonic-annotator(64bit)` and add its installation path to SYSTEM PATH. Also, paste `pyin_1.1.1.dll` into `C:\Program Files\Vamp Plugins`.
+- If use `pyin(tony)` as `pitch tracker`, please install `sonic-annotator(64bit)` and add its installation path to SYSTEM PATH. Also, paste `pyin_1.1.1.dll` into `C:\Program Files\Vamp Plugins`.
 
-## Staring up TEAS:
+## Starting up TEAS:
 
 - Create a new folder for your project according to our dataset preview.
   
