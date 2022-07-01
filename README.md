@@ -203,22 +203,6 @@ The workflow of TEAS consists of following main steps:
 - Examples for editing Note:
   
   - Note correction.
-  
-  - Notes slitting due to incorrect pitch curve. You need to merge two Notes back together.
-    
-    - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-11-47-image.png)
-    
-    - As shown in the figure, the note on the left is the head of the actual note, and the latter half is identified as a new note due to the separation of the pitch.
-      
-      - Plan A: Edit the Pitch,re-importing boundaries and perform pitch2note
-        
-        - Use the `Up` button to fix the defective Octave disconnect in the Pitch curve.
-        
-        - Result：
-        
-        - <img title="" src="https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-12-36-image.png" alt="" width="184" data-align="left">
-      
-      - Plan B: Editing the Note directly
         
         - Log the start position of the Note on the left.<img src="https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-15-30-image.png" title="" alt="" width="307">
         
