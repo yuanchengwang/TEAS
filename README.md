@@ -4,7 +4,7 @@
 
 [![zh](https://img.shields.io/badge/点击这里-查看中文文档-green.svg)](https://github.com/yuanchengwang/TEAS/blob/main/README-zh.md)
 
-# TEAS Quick Start Guide
+# TEAS Quick Tutorial
 
 **Quick Tutorial for Transcription and Expressiveness Annotation System dedicated to Chinese traditional instrument Pipa**
 
@@ -16,9 +16,9 @@
 
 ## Starting up TEAS:
 
-- Create a new folder for your project according to our dataset preview.
+- Create a new folder for your project referring to Pipaset preview (See detailsbelow)
   
-  - File types and recommended naming scheme
+  - Naming scheme
     
     - Audio source:    `Name`_source`Track number`.wav
       
@@ -32,11 +32,11 @@
       
       Example:    `NanniBay_source1_pitch_str1_original.csv`
     
-    <u>(*):</u>TEAS will automatically determine what name it should be saved via string number and name of the audio source. 
+    <u>(*):</u>TEAS will automatically determine the default file name via string index and name of the audio source. 
 
-- Set `string_index`, initial guess of BPS, etc in `parametersetting.m`. Set synthesizer parameters for MIDI in `protocolsetting.m` if requiring synthesizer protocol(e.g. control keys) for MIDI export. All parameters are set specific to our study target, PIPA.
+- Configure the parameters like `string_index`, initial guess of 'beats_per_second' etc in `parametersetting.m`, in addition of synthesizer MIDI setting in `protocolsetting.m` if requiring control keys. All parameters are set specific to our study target, pipa and MIDI output on the Ample China Pipa(ACP) synthesizer.
 
-- Run `GUI_Main.m`. You should see the default tab of TEAS: Read Audio
+- Run `GUI_Main.m` to launch the platform
 
 
 
