@@ -112,7 +112,7 @@ The workflow of TEAS consists of following main steps:
     
     - Select the defective pitch after clicking the `Select Pitch Area` button or select a single point by clicking directly on the pitch curve, input the desired pitch value in `single point modification` then click the `Modify` button.
     
-    - Through the spectrogram behind pitch curve, remove them by selecting the range of defective area and set the pitch to `0`.
+    - Through the spectrogram behind pitch curve, remove them by selecting the defective range and set the pitch to `0`.
     
     - Octave error may occur. Select the area and octave up or down by `Up` or the `Down` button.
     
@@ -224,9 +224,9 @@ The workflow of TEAS consists of following main steps:
 
 - Click on the `Get Vibrato(s)`button. Algorithm will find all Pitch curves that is similar to a vibrato. The vibrato is automatically resized between the second Onset to the Offset of a Note 
 
-- To achieve performance-level annotation, squeeze the boundary of vibratos. Choose vibrato/trill/bending types manually
+- To achieve performance-level annotation, squeeze the boundary of vibratos. Choose vibrato/trill/bending types manually. Add the vibrato if lost.
 
-- Click on the `Export Area(s)`button to export all Vibrato range.
+- Click on the `Export Area(s)`button to export all Vibrato intervals.
 
 - Click on the `Export Parameters` button to export all Vibrato parameters.
 
@@ -238,19 +238,17 @@ The workflow of TEAS consists of following main steps:
 
 - Click on the `Vibrato-free Pitch` button. This will flatten the pitch curve in vibrato intervals.
 
-- Click on the `Get Sliding(s)` button simultaneously, while examinating by hearing each Sliding in the Slidings list. More you click, More intervals generate. Please do not click the button for too many times, which will lead to over-smoothing artifact and break the result.
+- Click on the `Get Sliding(s)` button simultaneously, while examinating by hearing each in the Slidings list. More times you click, more intervals generate. Please do not click the button for too many times, which will lead to over-smoothing artifact and biased parameters.
 
-- Examine the Slidings result by listening to them and remove the defective result.
+- Add or delete the sliding intervals and correct the boundaries.
 
 - Select the correct `Type` for each Sliding.
 
-- Click on the `Export Area(s)` button to export all Sliding range.
+- Click on the `Export Area(s)` button to export all Sliding intervals. 
 
-- Click on the `Logistics Model` button to calculate Logistics Model.
+- Click on the `Logistics Model` button for parameter estimation.
 
 - Click on the `Export Parameters` button to export all Sliding parameters.
-
-NOTE: `sliding`/`sliding out` uses the pitch before the slide, while `sliding in` uses the Pitch after the slide
 
 ##### Tremolo Analysis
 
@@ -260,21 +258,21 @@ NOTE: `sliding`/`sliding out` uses the pitch before the slide, while `sliding in
 
 - Click on `Get Tremolo(s)` button to calculate the plucks in each Note.
 
-- Examine each Note. If the Note is just a regualr Note, there should be only one pluck at the peak level of the Note. If there is more than one pluck for a normal Note, delete the redundant ones by click on the pluck then click on the `Delete Pluck` button, or simply keypress `Backspace` key.
+- Examine each candidate note. If the Note is just a regular Note, only a single pluck exist at the second onset peak. If there is more than one pluck for a normal note, remove the extra plucks by click on the pluck then deleting via `Delete Pluck` button, or simply keypress `Backspace`.
 
-- If a Tremolo Note is found, examine whether there are two plucks on every single Note where one is at the start and the other at the end, except for the last Note which we only put one pluck on the start of the Note. You should add the missing pluck in a tremolo by clicking on `Add Pluck` button and click on approximate pluck position. Delete the defective ones with `Delete Pluck` button, or keypress `Backspace`.
+- If tremolo occurs, add the 
+ You should add the missing pluck in a tremolo by clicking on `Add Pluck` button and click on approximate pluck position. Clicking Delete the defective ones with `Delete Pluck` button, or keypress `Backspace`.
 
-- Choose the correct `Type` for each tremolo.
+- Choose the correct `Type` for each tremolo. For the 2nd and the 3rd string, default Tremolo type is `shaking`. 
+  Fingering: Shaking: plucking with index finger, Rolling: alternative plucking using thumb and index fingers, Wheel: plucking with more than 2 fingers.
 
 - Example of a correct Tremolo mark:
   
   - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-28-13-image.png)
 
-- Click on the`Export Area(s)+Plucks`button to export all Tremolo range.
+- Click on the`Export Area(s)+Plucks`button to export all Tremolo intervals.
 
 - Click on the `Export Parameters` button to export all Tremolo parameters.
-
-NOTE: for the 2nd and the 3rd string, default Tremolo type is `shaking`. 
 
 ##### Strumming Analysis
 
@@ -294,7 +292,7 @@ NOTE: for the 2nd and the 3rd string, default Tremolo type is `shaking`.
 
 - Choose the correct Type for each Strumming Note on the right side panel.
 
-- Click on the`Export Area(s)` button to export all Strumming range.
+- Click on the`Export Area(s)` button to export all Strumming intervals.
 
 - Click on the `Export Parameters`button to export all Strumming parameters.
 
