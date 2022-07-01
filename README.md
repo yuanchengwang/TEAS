@@ -70,7 +70,7 @@ The workflow of TEAS consists of following main steps:
 
 ### MSS
 
-(Optional) Import audio source with mutual resonance in each track of Multitrack+MIDI tab. Then click on `Signal Separation` button to run the MSS. Export the debleeded signal from each track of Multitrack+MIDI tab.
+(Optional) Import audio source with mutual resonance in each track of Multitrack+MIDI tab. Then click on `Signal Separation` button to run the MSS. Export the debleeded signal from each track of Multitrack+MIDI tab. This step will effectively reduce the interference among the strings.
 
 ### AMT
 
@@ -100,7 +100,7 @@ The workflow of TEAS consists of following main steps:
   
   - Pitch curve from other string's vibration is recommended to mannually remove. 
   
-  - Playback is provided. 
+  - Hint: Playback is provided. 
   
   - Save and export Pitch Curve
     
@@ -160,15 +160,15 @@ The workflow of TEAS consists of following main steps:
     
     - Click on `Onset Detection` button, the algorithm will find potential peaks (*High false positive outcome*), and mark them all as Onsets rendered as red lines. 
     
-    - Remove all detective Onsets from Pitch leakage or Tremolo. You may edit them cautiously one-by-one, or use `Select Boundary Area` to speed up this process. 
+    - Remove all detective Onsets from unvoiced and tremolo intervals. `Select Boundary Area` will speed up the process. 
       
-      Hint: you can toggle `Plot Audio` checkbox to speed up the process by looking at where the note should be.
+      Hint: you can toggle `Plot Audio` checkbox to determine the boundary point.
     
-    - After editing Onsets, click on the `Offset Detection` button. The algorithem will automatically calculate where each Offset should be. they will be rendered as yellow lines.(*most of them might be overlayed by the first Onset of the next note, which you can not see*)
+    - After editing Onsets, click on the `Offset Detection` button. The algorithem will automatically calculate where each Offset rendered as yellow lines.(*most of them might be overlayed by the first Onset of the next note, which you can not see*)
     
     - Use the `zoom` function from Matlab to improve your precision while editing boundaries. Keep retrying Offset Detection as you improve Onsets. When Offset Detection is done, you can generate Notes by simply clicking on the `Pitch2note` button. with this, you can examine errors during the marking of Boundaries. Notes will be listed in the listbox anchored on the bottom left of the page. You can click on each Note to see the detailed graph of how the Note looked like. You can delete the Note you selected by clicking on the `Delete Note` button.
     
-    - Caution: When `Offset Detection` or `Pitch2note` gives you this warning, fix one more defective Onset before you procceed. This is due to how Pipa uses two Onsets for each Note, odd number for quantity of Onsets is not allowed.
+    - Caution: When `Offset Detection` or `Pitch2note` gives you this warning, fix one more defective Onset before procceed. This is due to how Pipa uses two Onsets for each Note, odd number for quantity of Onsets is not allowed.
       
       - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-53-18-image.png)
     
@@ -222,19 +222,13 @@ The workflow of TEAS consists of following main steps:
 
 - Navigate to `Vibrato Analysis` tab.
 
-- Click on the `Get Vibrato(s)`button. Algorithm will find all Pitch curves that is similar to a vibrato.
+- Click on the `Get Vibrato(s)`button. Algorithm will find all Pitch curves that is similar to a vibrato. The vibrato is automatically resized between the second Onset to the Offset of a Note 
 
-- Click on each Vibratos, using the `Play Vibrato` button to identify whether the Vibrato is defective or not. If it is, Delete it with the`Delete Vibrato` button.
-
-- Select correct `Type` for each Vibrato. on the left side panel.
+- To achieve performance-level annotation, squeeze the boundary of vibratos. Choose vibrato/trill/bending types manually
 
 - Click on the `Export Area(s)`button to export all Vibrato range.
 
 - Click on the `Export Parameters` button to export all Vibrato parameters.
-
-NOTE1: Please remeber to choose vibrato/trill/bending types manually.
-
-NOTE2: Vibrato will automatically resize between the second Onset to the Offset of the Note, in order to achieve performance-level precision.
 
 ##### Sliding Analysis
 
@@ -242,9 +236,9 @@ NOTE2: Vibrato will automatically resize between the second Onset to the Offset 
 
 - Navigate to `Sliding Analysis` tab
 
-- Click on the `Vibrato-free Pitch`button. This wil filter out all the Pitch where Vibratos have already been recognized to improve the accuracy of Sliding Detection.
+- Click on the `Vibrato-free Pitch` button. This will flatten the pitch curve in vibrato intervals.
 
-- Click on the`Get Sliding(s)` button simultaneously, while examinating by hearing each Sliding in the Slidings list. More you click, More intervals generate. Please do not click the button for too many times, which will lead to over-smoothing artifact and break the result.
+- Click on the `Get Sliding(s)` button simultaneously, while examinating by hearing each Sliding in the Slidings list. More you click, More intervals generate. Please do not click the button for too many times, which will lead to over-smoothing artifact and break the result.
 
 - Examine the Slidings result by listening to them and remove the defective result.
 
@@ -256,7 +250,7 @@ NOTE2: Vibrato will automatically resize between the second Onset to the Offset 
 
 - Click on the `Export Parameters` button to export all Sliding parameters.
 
-NOTE: `sliding`/`sliding out` uses the Pitch before the slide, while `sliding in` uses the Pitch after the slide
+NOTE: `sliding`/`sliding out` uses the pitch before the slide, while `sliding in` uses the Pitch after the slide
 
 ##### Tremolo Analysis
 
