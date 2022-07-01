@@ -34,7 +34,7 @@
     
     <u>(*):</u>TEAS will automatically decide what name it should be saved as based on your settings in string number and name of the audio source. 
 
-- Set string properties, initial guess of BPM, etc in`parametersetting.m`.Set MIDI parameter in `protocolsetting.m` if you need special export for midi like the midi mode. All parameters are set by default specific to our study target, PIPA.
+- Set string properties, initial guess of BPS, etc in`parametersetting.m`. Set synthesizer parameters for MIDI in `protocolsetting.m` if you need special export for midi like the midi mode. All parameters are set by default specific to our study target, PIPA.
 
 - Run `GUI_Main.m`. You should see the default tab of TEAS: Read Audio
 
@@ -44,9 +44,9 @@
 
 The workflow of TEAS can be categorized into these steps:
 
-- [MSS(Multichannel signal separation)(Optional)](#MSS(Multichannel signal separation))
+- [MSS(Multichannel signal separation)(Optional)](#MMS)
 
-- [AMT(Automatic music transcription)](#AMT(Automatic-music-transcription))
+- [I, AMT(Automatic music transcription)](#AMT)
   
   1. Import denoised audio source
   
@@ -54,7 +54,7 @@ The workflow of TEAS can be categorized into these steps:
   
   3. Note Detection
 
-- [EA(Expressive analysis)](#EA(Expressive-analysis))
+- [II, EA(Expressive Analysis)](#EA)
   
   1. Vibrato Analysis
   
@@ -64,15 +64,15 @@ The workflow of TEAS can be categorized into these steps:
   
   4. Strumming Analysis
 
-- [Multitrack Midi project](#Multitrack-Midi-project)
+- [III, Multitrack](#Multitrack)
   
   1. Multitrack+MIDI
 
-### MSS(Multichannel signal separation)
+### MSS
 
 (Optional) Import audio sources with string sound leakage in Multitrack+MIDI tab. then click on `Signal Separation` button to process the audio. Export the audio after the calculation process.(Optional)
 
-### AMT(Automatic music transcription)
+### AMT
 
 ##### Import denoised audio source
 
@@ -236,7 +236,7 @@ The workflow of TEAS can be categorized into these steps:
         
         - <img title="" src="https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-16-11-image.png" alt="" width="296" data-align="left">
 
-### EA(Expressive analysis)
+### EA
 
 ##### Vibrato Analysis
 
@@ -326,7 +326,7 @@ NOTE: for the 2nd and the 3rd string, default Tremolo type is `shaking`.
 
 - Click on the `Export Parameters`button to export all Strumming parameters.
 
-### Multitrack Midi project
+### Multitrack
 
 ##### Multitrack+MIDI
 
