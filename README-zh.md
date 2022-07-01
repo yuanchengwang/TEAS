@@ -3,9 +3,9 @@
 </p>
 
 [![en](https://img.shields.io/badge/English-Document-red.svg)](https://github.com/yuanchengwang/TEAS/blob/main/README.md)
-# TEAS 快速入门教程
+# TEAS 琵琶转录与技巧标记系统快速入门教程
 
-**Quick Tutorial for Transcription and Expressiveness Annotation System**
+**Quick Tutorial for Transcription and Expressiveness Annotation System dedicated to Chinese traditional instrument Pipa**
 
 ## 前置准备：
 
@@ -15,7 +15,7 @@
 
 ## 启动TEAS:
 
-- 第一步: 新建一个项目文件夹。为了提高项目的一致性和可维护性，我们建议您按照`示例数据集`中的规则对文件进行命名
+- 第一步: 新建一个项目文件夹。为了提高项目的一致性和可维护性，我们建议您按照`示例数据集`（见后）中的规则对文件进行命名
   
   - 基本文件类型与命名规则
     
@@ -37,11 +37,12 @@
 
 - 第三步:    运行`GUI_Main.m`文件，您将看到TEAS的默认页面: Read Audio
 
-- 第四步:    在Multitrack+MIDI界面中，每个分轨的audio部分导入对应弦带有串音的录制文件，然后右侧的Signal Separation按钮，运算完成后，可以在每个分轨的audio部分导出分离后的音频。(可选)
 
 ## 使用TEAS:
 
 使用TEAS进行标记可以粗略分为以下步骤：
+
+- [MSS(多轨信号分离)(可选)](#多轨信号分离)
 
 - [一、AMT(自动音乐转录)](#自动音乐转录)
   
@@ -61,10 +62,13 @@
 
   4. 扫弦标记 - Strumming Analysis
 
-- 三、[多轨显示与输出](#多轨分析处理)
+- 三、[多轨显示与导出](#多轨显示与导出)
   
-  1. [导入分轨或项目文件 - Multitrack+MIDI](#处理分轨或项目文件)
-  
+  1. 导入分轨或项目文件 - Multitrack+MIDI
+
+### 多轨信号分离:
+(可选)
+在Multitrack+MIDI界面中，每个分轨的audio部分`Import`导入对应弦带有串音的录制文件，然后右侧的`Signal Separation`按钮，运算完成后，可以通过每个分轨的audio部分`Export`导出分离后的音频。该方法可以有效减少弦之间的串音。
 
 ### 自动音乐转录:
 
@@ -72,7 +76,7 @@
 
 ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-03-59-13-image.png)
 
-- 在Read Audio界面中，使用`Import Denoised Wave`按钮，选择需要导入的去噪或者分离后的文件。请确保当前文件选择的弦号与`parameter_setting.m`中设置的弦号一致
+- 在Read Audio界面中，使用`Import Denoised Wave`按钮，选择需要导入去噪后或者分离后的文件。请确保当前文件选择的弦号与`parameter_setting.m`中设置的弦号一致
 
 ##### 二、生成并修改Pitch
 
@@ -89,7 +93,7 @@
   - BNLS: 较慢，方便后续的技法标记，时域连续性较好，但同时音高稳定性较弱
     (TEAS的标记对象为琵琶，建议选BNLS)
   
-  - 算法运行完毕后，对音高进行适当修正和清理后，点击Export Pitch Curve按钮，前往项目目录，并将默认名称后面加上`_original`后导出，作为参照与备份
+  - 算法运行完毕后，对音高进行适当修正和清理后，点击`Export Pitch Curve`按钮，前往项目目录，并将默认名称后面加上`_original`后导出，作为参照与备份
 
 - Pitch修正中的注意事项:
   
@@ -100,23 +104,23 @@
   
   - 保存和导出Pitch Curve
     
-    - 保存的方法：点击Export Pitch Curve按钮，前往项目目录，并选定需要保存的位置
+    - 保存的方法：点击`Export Pitch Curve`按钮，前往项目目录，并选定需要保存的位置
     
-    - 载入的方法：点击Import Pitch Curve按钮，前往项目目录，并选定之前保存好的csv文件
+    - 载入的方法：点击`Import Pitch Curve`按钮，前往项目目录，并选定之前保存好的csv文件
 
 - Pitch修正案例:
   
   - 音调识别错误修正
     
-    - 点击Select Pitch Area按钮，拖动鼠标框住错误的音高曲线部分； 直接点击则是选择一个点，在single point modification下方的输入框中填写正确的频率再modify
+    - 点击`Select Pitch Area`按钮，拖动鼠标框住错误的音高曲线部分； 直接点击则是选择一个点，在Single point modification下方的输入框中填写正确的频率再修正
 
-    - 观察Pitch线后方对应的能量图(蓝色为低，红色为高)，若有Pitch但后方无明显对应基频的响度，则为漏音，鼠标框柱对应Pitch的线，将频率改写为0，点击Modify按钮即可
+    - 观察Pitch线后方对应的能量图(蓝色为低，红色为高)，若有Pitch但后方无明显对应基频的响度，则为漏音，鼠标框柱对应Pitch的线，将频率改写为0，点击`Modify`按钮即可
     
-    - 常见为八度泛音识别错误，框出错误后点击Up或者Down按钮即可
+    - 常见为八度泛音识别错误，框出错误后点击`Up`或者`Down`按钮即可
     
     案例:![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-07-34-image.png)
     
-    如图所示：在88到94秒的凸起波形中存在下落的数据，观察可知下降了八度（B3->B2），解决方法：框住错误的部分，点击Up按钮
+    如图所示：在88到94秒的凸起波形中存在下落的数据，观察可知下降了八度（B3->B2），解决方法：框住错误的部分，点击`Up`按钮
     
     结果：![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-08-13-image.png)
   
@@ -132,7 +136,7 @@
   
   - Offset = MIDI音符结束的标记
   
-  - 注： 在弹奏琵琶时，假指甲与琵琶的弦碰撞产生第一次峰值（note的起始,key-on），弦起振带来第二个峰值（强度的估计），因此琵琶一个音拥有<u>两个能量波锋对应一个单音</u>的属性。在实际标注中，一个音有两个Onset和一个Offset;
+  - 注： 在弹奏琵琶时，假指甲与琵琶的弦碰撞产生第一次峰值（note的起始,即key-on），弦起振带来第二个峰值（用于强度的估计），因此琵琶一个音拥有<u>两个能量波锋对应一个单音</u>的属性。在实际标注中，一个音有两个Onset和一个Offset;
 
 
 - 单音示例
@@ -153,21 +157,21 @@
   
   - 如何快速删除:
     
-    - 在不使用缩放工具的情况下(鼠标指针图标为正常的指针)，单击于所选边缘处(不需要完全准确，程序会自动选择最近的boundary)，或者选择对应的note区块。若Onset于note重叠，需要点击Onset于note上下的非重叠部分。当图像刷新后，点击红色的Delete Onset/offset/note按钮或按下键盘上的退格(backspace)键
+    - 在鼠标指针图标为正常的指针的情况下，单击于所选boundary处(不需要完全准确，程序会自动选择最近的boundary)，或者选择对应的note区块。若boundary与note重叠选取boundary，需要点击上下的非重叠部分。当图像刷新后，点击红色的Delete Onset/Offset/Note按钮或按下键盘上的退格(backspace)键
     
-    - 点击右侧边栏上的Select Boundary Area按钮后，在图像内可以框选出一定区域内的所有Onset+Offset,此时按下键盘上的退格(backspace)键会删除所有的Onset和Offset。点击Delete Onset或Delete Offset则会删除选定区域内的所有Onset或者Offset,而不是全部删除
+    - 点击右侧边栏上的Select Boundary Area按钮后，在图像内可以框选出一定区域内的所有Onset+Offset,此时按下键盘上的退格(backspace)键会删除所有的Onset和Offset。点击`Delete Onset`或`Delete Offset`则会删除选定区域内的所有Onset或者Offset,而不是全部删除
   
   - 如何快速添加:
     
-    - 在不使用缩放工具的情况下(鼠标指针图标为正常的指针)，单击绿色的Add Onset按钮，然后在图表上点击对应的蓝色波峰处
+    - 在不使用缩放工具的情况下(鼠标指针图标为正常的指针)，单击绿色的`Add Onset`按钮，然后在图表上点击对应的蓝色波峰处
   
   - 标记流程:
     
     <ol>
-    <li> 点击Onset Detection按钮，算法将自动识别峰值能量点（高precision会有较高的False Positive）,并将被绘制为红色竖线，也可以用Select Boundary Area选择一个区域的所有Boundary(Onset+offset)
+    <li> 点击Onset Detection按钮，算法将自动识别峰值能量点（高precision会有较高的False Positive）,并将被绘制为红色竖线，也可以用`Select Boundary Area`选择一个区域的所有Boundary(Onset+offset)
     <li> 删除所有轮指处过多的Onset(删除中间红色过于密集的部分，留一头一尾)、串音对应的Onset。技巧：可以通过plot audio显示与关闭音频曲线确定哪些onset是合适的位置
-    <li> onset修正后,点击Offset Detection按钮，算法将自动识别Offset的位置，并将其绘制为黄色竖线(大部分可能和下一个音的Onset重叠，因此看不大出来)
-    <li> 逐个区域使用放大镜进行修正，并重复Offset Detection。当Offset Detection完成后，将Choose pitch2note method设置为HMM baseline（默认）,并点击Pitch2note按钮，生成当前Onset识别出的音符，以辅助识别校正。当pitch2note计算完成后，将会在左下方的列表中列出所有的note，并渲染到上方图表中。鼠标单击列表或图标中的note，将会在下方图表中渲染出选中note的细节图
+    <li> onset修正后,点击`Offset Detection`按钮，算法将自动识别Offset的位置，并将其绘制为黄色竖线(大部分可能和下一个音的Onset重叠，因此看不大出来)
+    <li> 逐个区域使用放大镜进行修正，并重复Offset Detection。当Offset Detection完成后，将Choose pitch2note method设置为`HMM baseline`（默认）,并点击`Pitch2note`按钮，生成当前Onset识别出的音符，以辅助识别校正。当pitch2note计算完成后，将会在左下方的列表中列出所有的note，并渲染到上方图表中。鼠标单击列表或图标中的note，将会在下方图表中渲染出选中note的细节图
     </ol>
     
     - 注意:当第三步出现以下报错时，Onset为奇数（琵琶场景下），整体中存在错误
@@ -193,21 +197,21 @@
     
     - Edge:
       
-      - 保存的方法：点击Export Boundaries按钮，前往项目目录并点击保存
+      - 保存的方法：点击`Export Boundaries`按钮，前往项目目录并点击保存
       
-      - 载入的方法：点击Import Boundaries按钮，前往项目目录并选定之前保存好的csv文件
+      - 载入的方法：点击`Import Boundaries`按钮，前往项目目录并选定之前保存好的csv文件
     
     - Note:
       
-      - 保存的方法：点击Export Notes按钮，前往项目目录并点击保存
+      - 保存的方法：点击`Export Notes`按钮，前往项目目录并点击保存
       
-      - 载入的方法：点击Import Notes按钮，前往项目目录并选定之前保存好的csv/mid文件，注意： Mid默认control key是基于Ample China Pipa来做的，可以在调整prototypesetting.m中调整
+      - 载入的方法：点击`Import Notes`按钮，前往项目目录并选定之前保存好的csv/mid文件，注意： Mid默认control key是基于Ample China Pipa(ACP)来做的，可以在调整`protocolsetting.m`中调整
 
 - 实际案例:
   
   - 当以下情况情况出现时，需要对note进行修正。
   
-  - 因pitch的识别或修正错误而导致的note断开，需要对两个note进行merge操作
+  - 因pitch的识别或修正错误而导致的note断开，需要对两个note进行merge操作。
     
     - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-11-47-image.png)
     
@@ -227,7 +231,7 @@
         
         - 将左侧note删除（点击高亮该note，点击Delete Note按钮）
         
-        - 点击右侧note，将最左下角的note开始时间设定为前一个note的开始时间，然后点击Modify按钮即可
+        - 点击右侧note，将最左下角的note开始时间设定为前一个note的开始时间，然后点击`Modify`按钮即可
         
         - 处理结果：
         
@@ -241,19 +245,19 @@
 
 - 前往Vibrato Analysis页面
 
-- 点击Get Vibrato(s)按钮，将会列出所有类似于Vibrato的事件
+- 点击`Get Vibrato(s)`按钮，将会列出所有类似于Vibrato的事件
 
-- 分别点击左下方列表中的各音，用Play Vibrato按钮来聆听当前选中的Vibrato事件所在的音频，确定是否为Vibrato技法。若不是，使用Delete Vibrato按钮来删除当前选中的Vibrato事件
+- 分别点击左下方列表中的各音，用`Play Vibrato`按钮来聆听当前选中的Vibrato事件所在的音频，确定是否为Vibrato技法。若不是，使用`Delete Vibrato`按钮来删除当前选中的Vibrato事件
 
 - 在每个正确的Vibrato事件右侧选择正确的Type
 
-- 点击Export Area(s)按钮来导出所有Vibrato事件范围
+- 点击`Export Area(s)`按钮来导出所有Vibrato事件范围
 
-- 点击Export All按钮来导出所有Vibrato事件参数
+- 点击`Export Parameters`按钮来导出所有Vibrato事件参数
 
 注: 请根据实际情况自行调整vibrato/trill/bending类型
 
-注2: vibrato部分,vibrato自动规整到一个音符的第二个onset和offset之间，performance-level级别.因此只会比一个音范围小的
+注2: vibrato部分,vibrato自动规整到一个音符的第二个onset和offset之间，performance-level级别.因此只会比自动生成的范围小的
 
 ##### 二、滑音标记
 
@@ -273,7 +277,7 @@
 
 - 点击Logistics Model生成模型参数
 
-- 点击Export All来导出所有Sliding事件参数
+- 点击Export Parameters来导出所有Sliding事件参数
 
 注:sliding,sliding out音高取滑前音高，sliding in取滑后音高 
 
@@ -284,11 +288,11 @@
 
 - 前往Tremolo Analysis页面
 
-- 点击Get Tremolo(s)按钮来计算每个Note中的pluck
+- 点击`Get Tremolo(s)`按钮来计算每个Note中的pluck
 
-- 依次检查每一个Note,如果是一个普通的Note,则只出现一个pluck在能量峰处。若出现多余的pluck，请鼠标左键点击该pluck后点击Delete Pluck按钮或按键盘上的Backspace键
+- 依次检查每一个Note,如果是一个普通的Note,则只出现一个pluck在能量峰处。若出现多余的pluck，请鼠标左键点击该pluck后点击`Delete Pluck`按钮或按键盘上的Backspace键
 
-- 若出现Tremolo，需要检查是否除了最后一个音以外的每个音的头和尾处的能量峰上都拥有一个pluck，若缺失则使用Add Pluck按钮并点击需要添加的位置。若出现多余或错位的pluck则鼠标左键点击该Pluck后点击Delete Pluck按钮或按键盘上的Backspace键
+- 若出现Tremolo，需要检查是否除了最后一个音以外的每个音的头和尾处的能量峰上都拥有一个pluck，若缺失则使用`Add Pluck`按钮并点击需要添加的位置。若出现多余或错位的pluck则鼠标左键点击该Pluck后点击`Delete Pluck`按钮或按键盘上的Backspace键
 
 - 在每个正确的Tremolo右侧选择对应的Type
 
@@ -296,9 +300,9 @@
   
   - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-28-13-image.png)
 
-- 点击Export Area(s)+Plucks按钮导出所有Tremolo事件范围
+- 点击`Export Area(s)+Plucks`按钮导出所有Tremolo事件范围
 
-- 点击Export Parameters按钮导出所有Tremolo事件参数
+- 点击`Export Parameters`按钮导出所有Tremolo事件参数
 
 注：对于2，3弦，技巧默认是摇而不是轮，请根据实际情况进行调整。
 
@@ -312,21 +316,21 @@
   
   ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-41-49-image.png)
 
-- 分别导入4个轨道的onset，选择imported onset, 点击test and plot按钮，显示没根弦的起始点位置
+- 分别导入4个轨道的onset，选择'Imported'的priority优先级, 点击`Test and plot onsets`按钮，显示没根弦的起始点位置
 
 - 点击Get Strumming(s)按钮
 
-- 筛选出正确的Strumming序列，并使用Delete Strumming按钮或Backspace键来删除错误的Strumming序列
+- 筛选出正确的Strumming序列，并使用`Delete Strumming`按钮或Backspace键来删除错误的Strumming序列
 
 - 在每个Strumming的Note右侧选择正确的Type
 
-- 点击Export Area(s) 按钮导出所有Strumming事件范围
+- 点击`Export Area(s)`按钮导出所有Strumming事件范围
 
-- 点击Export Parameters按钮导出所有Strumming事件参数
+- 点击`Export Parameters`按钮导出所有Strumming事件参数
 
 注： 请根据实际情况自行调整扫弦类型
 
-### 多轨分析处理
+### 多轨显示与导出
 
 ##### 处理分轨或项目文件
 
@@ -343,24 +347,25 @@
 
 - 导出工程文件或MIDI文件
   
-  - 当导入多轨道内容完成后，点击右侧Project/MIDI Export
+  - 当导入多轨道内容完成后，点击右侧`Project/MIDI Export`
     在弹出的文件选择框的下方可以选择保存为Project或保存为Midi文件。
-    当确认保存位置后，会出现bpm确认的弹窗。如果估计的bpm值与实际值偏差较大，可以从command window中直接设置bpm。
+    当确认保存位置后，会出现bpm确认的弹窗。如果估计的bpm值与实际值偏差较大，也可以从`ParameterSetting.m`修改初始beats_per_second。
 
-##### 预览数据集
+##### 示例数据集
 包含茉莉花南泥湾十面埋伏(第一段)的多模态数据集预览：
 https://zenodo.org/record/6760047
 更多数据将会在未来发布
 
 ##### 未来工作
+- 图形优化
 - 更多更精确的识别算法
-- MPE,(music)XML,JAMS等输出功能
-- MIDI协议功能
+- MPE,(music)XML,JAMS等导出格式
+- MIDI协议功能支持
 
 ##### 引用
 
 学术目的: 如果您使用该平台和相关数据在您的发表的文章中，请引用: 
-Yuancheng Wang, Yuyang Jing, Wei Wei, Dorian Cazau, Olivier Adam, Qiao Wang. PipaSet and TEAS: A Multimodal Dataset and Annotation Platform for Automatic Music Transcription and Expressive Analysis dedicated to Chinese Plucked String Instrument Pipa（In review）. IEEE ACCESS, 2022.
+Yuancheng Wang, Yuyang Jing, Wei Wei, Dorian Cazau, Olivier Adam, Qiao Wang. PipaSet and TEAS: A Multimodal Dataset and Annotation Platform for Automatic Music Transcription and Expressive Analysis dedicated to Chinese Plucked String Instrument Pipa (In review). IEEE ACCESS, 2022.
 
 最早的原始版本来源于Luwei Yang的工作: [luweiyang.com/research/ava-project](https://luweiyang.com/research/ava-project/)
 如果使用 AVA在您的发表的文章中，请引用: 
