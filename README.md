@@ -118,7 +118,7 @@ The workflow of TEAS consists of following main steps:
     
     Pitch editing examples:![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-07-34-image.png)
     
-    As shown in the figure: octave error in pitch curve located within 88 and 94 seconds.(B3-> B2), <u>Solution to this problem</u>: select the defective part and click the `Up` button.
+    As shown in the figure: octave error in pitch curve located within 88 and 94 seconds.(B3-> B2), <u>Solution to this problem</u>: select the defective interval and click the `Up` button.
     
     Result：![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-08-13-image.png)
 
@@ -202,9 +202,9 @@ The workflow of TEAS consists of following main steps:
 
 - Examples for editing Note:
   
-  - Correct the Note when the following situations occur.
+  - Note correction.
   
-  - Note is broken into halves due to incorrect Pitch curve. You need to merge two Notes back together.
+  - Notes slitting due to incorrect pitch curve. You need to merge two Notes back together.
     
     - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-11-47-image.png)
     
