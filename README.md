@@ -70,7 +70,7 @@ The workflow of TEAS consists of following main steps:
 
 ### MSS
 
-(Optional) Import audio source with mutual resonance in each track of Multitrack+MIDI tab. Then click on `Signal Separation` button to run the MSS. Export the audio in each track of Multitrack+MIDI tab.
+(Optional) Import audio source with mutual resonance in each track of Multitrack+MIDI tab. Then click on `Signal Separation` button to run the MSS. Export the debleeded signal from each track of Multitrack+MIDI tab.
 
 ### AMT
 
@@ -98,9 +98,9 @@ The workflow of TEAS consists of following main steps:
 
 - About pitch editing:
   
-  - Pitch only serve as a frequency data for individul note(s). you should only remove the pitch which comes from other string's vibration. Instead, you should keep as much as you can for better Edge modification later and higher accuracy on Note detection.Under some circumstances there will be Octave offset for pitch, you can fix them in the `Examples for Editing Pitch` down below.
+  - Pitch curve serves to the discrete MIDI pitch value estimation for each note. you could remove the part from other string's vibration. Instead, you should keep as much as you can for better boundary and Note detection. In case of octave error, you can fix them as described in the `Examples for Editing Pitch` below.
   
-  - If you are feeling lost while editing Pitch, you can directly click on audio wave graph on top to playback the audio from where you clicked. Use the `Stop` button to stop the audio playback.
+  - If you are feeling lost while editing pitch, you can directly click on audio wave graph on top to playback the audio from where you clicked. Use the `Stop` button to stop the audio playback.
   
   - Save and export Pitch Curve
     
