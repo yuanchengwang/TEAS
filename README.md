@@ -34,7 +34,7 @@
     
     <u>(*):</u>TEAS will automatically determine the default file name via string index and name of the audio source. 
 
-- Configure the parameters like `string_index`, initial guess of 'beats_per_second' etc in `parametersetting.m`, in addition of synthesizer MIDI setting in `protocolsetting.m` if requiring control keys. All parameters are set specific to our study target, pipa and MIDI output on the Ample China Pipa(ACP) synthesizer.
+- Configure the parameters like `string_index`, initial guess of 'beats_per_second' etc in `parametersetting.m`, in addition of synthesizer MIDI setting in `protocolsetting.m` if requiring control keys. All parameters are set specific to our study target, pipa and MIDI output follows the setting of the Ample China Pipa(ACP) synthesizer.
 
 - Run `GUI_Main.m` to launch the platform
 
@@ -44,7 +44,7 @@
 
 The workflow of TEAS consists of following main steps:
 
-- [MSS(Multichannel signal separation)(Optional)](#MSS)
+- [MSS(Multichannel signal separation)(Optional)](#MSS(Multichannel signal separation))
 
 - [I, AMT(Automatic music transcription)](#AMT)
   
@@ -68,7 +68,7 @@ The workflow of TEAS consists of following main steps:
   
   1. Multitrack+MIDI
 
-### MSS
+### MSS(Multichannel signal separation)
 
 (Optional) Import audio source with mutual resonance in each track of Multitrack+MIDI tab. Then click on `Signal Separation` button to run the MSS. Export the debleeded signal from each track of Multitrack+MIDI tab. This step will effectively reduce the interference among the strings.
 
