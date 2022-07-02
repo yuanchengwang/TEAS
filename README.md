@@ -303,8 +303,8 @@ The workflow of TEAS consists of following main steps:
 ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-34-44-image.png)
 
 - Navigate to`Multitrack+MIDI`tab
-
-- Import Dataset![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-35-45-image.png)
+![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-35-45-image.png)
+- Import audio and features in dataset
   
   - Import audio or music features in each track and visualize by toggling the corresponding checkbox.
 
