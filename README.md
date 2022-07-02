@@ -208,15 +208,15 @@ The workflow of TEAS consists of following main steps:
   
   - Note correction.
         
-        - Log the start position of the Note on the left.<img src="https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-15-30-image.png" title="" alt="" width="307">
+    - Log the start position of the Note on the left.
+     
+    <img src="https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-15-30-image.png" title="" alt="" width="307">
         
-        - Delete the note on the left.
+    - Delete the note on the left.
         
-        - Replace the start time of the right note with that of the left note.
+    - Replace the start time of the right note with that of the left note.
         
-        - Result：
-        
-        - <img title="" src="https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-16-11-image.png" alt="" width="296" data-align="left">
+    <img title="" src="https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-16-11-image.png" alt="" width="296" data-align="left">
 
 ### EA
 
