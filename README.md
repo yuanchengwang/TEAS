@@ -72,7 +72,7 @@ The workflow of TEAS consists of following main steps:
 
 ### MSS
 
-(Optional) Import audio source with mutual resonance in each track of Multitrack+MIDI tab. Then click on `Signal Separation` button to run the MSS. Export the debleeded signal from each track of Multitrack+MIDI tab. This step will effectively reduce the interference among the strings.
+(Optional) Import audio source with mutual resonance in each track of Multitrack+MIDI tab. Then click `Signal Separation` button to run the MSS. Export the debleeded signal from each track of Multitrack+MIDI tab. This step will effectively reduce the interference among the strings.
 
 ### AMT
 
@@ -104,9 +104,9 @@ The workflow of TEAS consists of following main steps:
   
   - Import and export Pitch Curve
     
-    - How to export：Click on the `Export Pitch Curve` button, select the saving path.
+    - How to export：Click `Export Pitch Curve` button, select the saving path.
     
-    - How to import：Click on the `Import Pitch Curve` button, select the loading path.
+    - How to import：Click `Import Pitch Curve` button, select the loading path.
   
   - Pitch error correction
     
@@ -148,13 +148,13 @@ The workflow of TEAS consists of following main steps:
   
   - To remove Onsets/Offsets/Notes:
     
-    - Select the Onset/Offset/Note(Approximate position is ok for onset/offset, the closest one will be chosen; click on the rectangle to select a note), then Click on `Delete Onset` or `Detele Offset` or `Delete Note`, or simply keypress `Backspace`. 
+    - Select the Onset/Offset/Note(Approximate position is ok for onset/offset, the closest one will be chosen; click on the rectangle to select a note), then click `Delete Onset` or `Detele Offset` or `Delete Note`, or simply keypress `Backspace`. 
     
     - You can speed up the workflow by Using the `Select Boundary Area` button to select all Onsets and Offsets in a certain area, and delete only Onsets or Offsets with `Delete Onset` or `Detele Offset` button, or keypress `Backspace` on to remove all selected boundaries.
   
   - To add offset:
     
-    - Click on `Add Onset` button, then click on an approximate position of peak(the closest peak will be chosen for onset if 'Onset auto-adjustment' checkbox is active).
+    - Click `Add Onset` button, then click on an approximate position of peak(the closest peak will be chosen for onset if 'Onset auto-adjustment' checkbox is active).
   
 ##### Note Segmentation using Corrected Boundaries
     
@@ -192,15 +192,15 @@ The workflow of TEAS consists of following main steps:
     
     - Boundaries:
       
-      - How to export：Click on the`Export Boundaries` button,select the path to save the boundary.
+      - How to export：Click `Export Boundaries` button,select the path to save the boundary.
       
-      - How to import：Click on the`Import Boundaries` button,select the boundary file to load.
+      - How to import：Click `Import Boundaries` button,select the boundary file to load.
     
     - Note:
       
-      - How to export：Click on the`Export Notes` button,select the path to save the dataset.
+      - How to export：Click `Export Notes` button,select the path to save the dataset.
       
-      - How to import：Click on the`Import Notes` button,select the dataset or mid file to load.
+      - How to import：Click `Import Notes` button,select the dataset or mid file to load.
       
       - Notice： Default Midi control key is generated based on Ample China Pipa. You can adjust these settings in `protocolsettings.m`
 
@@ -222,13 +222,13 @@ The workflow of TEAS consists of following main steps:
 
 - Navigate to `Vibrato Analysis` tab.
 
-- Click on the `Get Vibrato(s)`button. Algorithm will find all Pitch curves that is similar to a vibrato. The vibrato is automatically resized between the second Onset to the Offset of a Note 
+- Click `Get Vibrato(s)`button. Algorithm will find all Pitch curves that is similar to a vibrato. The vibrato is automatically resized between the second Onset to the Offset of a Note 
 
 - To achieve performance-level annotation, squeeze the boundary of vibratos. Choose vibrato/trill/bending types manually. Add the vibrato if lost.
 
-- Click on the `Export Area(s)`button to export all Vibrato intervals.
+- Click `Export Area(s)`button to export all Vibrato intervals.
 
-- Click on the `Export Parameters` button to export all Vibrato parameters.
+- Click `Export Parameters` button to export all Vibrato parameters.
 
 ##### Sliding Analysis
 
@@ -236,19 +236,19 @@ The workflow of TEAS consists of following main steps:
 
 - Navigate to `Sliding Analysis` tab
 
-- Click on the `Vibrato-free Pitch` button. This will flatten the pitch curve in vibrato intervals.
+- Click `Vibrato-free Pitch` button. This will flatten the pitch curve in vibrato intervals.
 
-- Click on the `Get Sliding(s)` button simultaneously, while examinating by hearing each in the Slidings list. More times you click, more intervals generate. Please do not click the button for too many times, which will lead to over-smoothing artifact and biased parameters.
+- Click `Get Sliding(s)` button simultaneously, while examinating by hearing each in the Slidings list. More times you click, more intervals generate. Please do not click the button for too many times, which will lead to over-smoothing artifact and biased parameters.
 
 - Add or delete the sliding intervals and correct the boundaries.
 
 - Select the correct `Type` for each Sliding.
 
-- Click on the `Export Area(s)` button to export all Sliding intervals. 
+- Click `Export Area(s)` button to export all Sliding intervals. 
 
-- Click on the `Logistics Model` button for parameter estimation.
+- Click `Logistics Model` button for parameter estimation.
 
-- Click on the `Export Parameters` button to export all Sliding parameters.
+- Click `Export Parameters` button to export all Sliding parameters.
 
 ##### Tremolo Analysis
 
@@ -256,7 +256,7 @@ The workflow of TEAS consists of following main steps:
 
 - Navigate to `Tremolo Analysis` tab.
 
-- Click on `Get Tremolo(s)` button to calculate the plucks in each Note.
+- Click `Get Tremolo(s)` button to calculate the plucks in each Note.
 
 - Examine each candidate note. If the Note is just a regular Note, only a single pluck exist at the second onset peak. If there is more than one pluck for a normal note, remove the extra plucks by click on the pluck then deleting via `Delete Pluck` button, or simply keypress `Backspace`.
 
@@ -270,9 +270,9 @@ The workflow of TEAS consists of following main steps:
   
   - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-28-13-image.png)
 
-- Click on the`Export Area(s)+Plucks`button to export all Tremolo intervals.
+- Click `Export Area(s)+Plucks`button to export all Tremolo intervals.
 
-- Click on the `Export Parameters` button to export all Tremolo parameters.
+- Click `Export Parameters` button to export all Tremolo parameters.
 
 ##### Strumming Analysis
 
@@ -280,21 +280,21 @@ The workflow of TEAS consists of following main steps:
 
 - Navigate to `Strumming Analysis`tab.
 
-- Click on `Multi-track Paths`button.
+- Click `Multi-track Paths`button to a new interface.
   
   ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-41-49-image.png)
 
-- Import Onset for all the tracks, select the priority with `Imported` and click on the `Test and plot onsets` button. The starting point of each note is rendered in the graph.
+- Import Onset for all the tracks, select the priority with `Imported` and click `Test and plot onsets` button. The starting point of each note is rendered in the graph.
 
-- Click on the `Get Strumming(s)`button.
+- Click `Get Strumming(s)`button.
 
 - Filter the Correct Strumming sequence, use `Delete Strumming` button or key press `Backspace` to delete defective Strumming sequences.
 
 - Choose the correct Type for each Strumming Note on the right side panel.
 
-- Click on the`Export Area(s)` button to export all Strumming intervals.
+- Click `Export Area(s)` button to export all Strumming intervals.
 
-- Click on the `Export Parameters`button to export all Strumming parameters.
+- Click `Export Parameters`button to export all Strumming parameters.
 
 ### Multitrack
 
@@ -310,7 +310,7 @@ The workflow of TEAS consists of following main steps:
 
 - Export Project or Midi file
   
-  - Click on the `Project/MIDI Export` button and choose to save mulittrack session to Project or Midi. When exporting Midi,there will be prompts to tell you informations about BPM guessing and how to set your own initial guess of BPM. 
+  - Click `Project/MIDI Export` button and choose to save mulittrack session to Project or Midi. When exporting Midi,there will be prompts to tell you informations about BPM guessing and how to set your own initial guess of BPM. 
     
 
 ## Preview datasets
@@ -332,5 +332,7 @@ More pieces of music in the future.
 For Academic Use: If you are using this platform in research work for publication, please cite: Yuancheng Wang, Yuyang Jing, Wei Wei, Dorian Cazau, Olivier Adam, Qiao Wang. PipaSet and TEAS: A Multimodal Dataset and Annotation Platform for Automatic Music Transcription and Expressive Analysis dedicated to Chinese Plucked String Instrument Pipa (In review). IEEE ACCESS, 2022.
 
 The original code is based on the Luwei Yang's work: If you are using AVA in research work for publication, please cite: https://luweiyang.com/research/ava-project
+
 Luwei Yang, Khalid Z. Rajab and Elaine Chew. AVA: A Graphical User Interface for Automatic Vibrato and Portamento Detection and Analysis, In Proc. of the 42nd International Computer Music Conference (ICMC), September 2016.
+
 Luwei Yang, Khalid Z. Rajab and Elaine Chew. AVA: An Interactive System for Visual and Quantitative Analyses of Vibrato and Portamento Performance Styles, In Proc. of the 17th International Society for Music Information Retrieval Conference, 2016.
