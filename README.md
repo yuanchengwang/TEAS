@@ -266,7 +266,7 @@ The workflow of TEAS consists of following main steps:
 - Choose the correct `Type` for each tremolo. For the 2nd and the 3rd string, default Tremolo type is `shaking`. 
   Fingering: Shaking: plucking with index finger, Rolling: alternative plucking using thumb and index fingers, Wheel: plucking with more than 2 fingers.
 
-- Example of a correct Tremolo mark:
+- Example of a correct tremolo pluck annotation:
   
   - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-28-13-image.png)
 
