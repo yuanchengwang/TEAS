@@ -52,7 +52,9 @@ The workflow of TEAS consists of following main steps:
   
   2. Pitch Detection
   
-  3. Note Segmentation
+  3. Boundary Detection
+  
+  4. Note Segmentation
 
 - [II, EA(Expressive Analysis)](#EA)
   
@@ -78,7 +80,7 @@ The workflow of TEAS consists of following main steps:
 
 ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-03-59-13-image.png)
 
-- Under `ReadAudio` tab, import denoised/debleeded audio source with `Import Denoised Wave` button. Make sure the string index of imported audio is the same as set in `parametersettings.m`
+- Under `ReadAudio` tab, import denoised/debleeded audio source with `Import Denoised Wave` button. Make sure the string index of imported audio identical to that in `parametersettings.m`
 
 ##### Pitch Detection
 
@@ -92,7 +94,7 @@ The workflow of TEAS consists of following main steps:
   
   - pYin(tony): Fastest, great pitch detector with insufficient consistency in time for articulation like tremolo.
   
-  - BNLS: Slowest, better consistency in time but slightly worse in pitch. Rough crop for the pitch curve is required (Recommended for complex articulation cases).
+  - BNLS: Slowest, better consistency in time but slightly worse in pitch. Rough crop for the pitch curve is required (Recommended in complex articulation cases).
   
   - A backup of the roughly processed original pitch file is recommended for later use. We save it with  `_original` at the end of the filename. 
 
@@ -120,19 +122,19 @@ The workflow of TEAS consists of following main steps:
     
     Result：![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-08-13-image.png)
 
-##### Note Detection
+##### Boundary Detection
 
 ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-14-22-image.png)
 
-- What are Boundaries:
+- Boundary definition for pipa:
   
   - Onset = The start of each MIDI note
   
   - Offset = The end of each MIDI note
   
-  - The fake nail will produce a crisp soudn and envelope peak when touching the string. This serves to the note onset, i.e. key-on. The second peak points out the natural transient from the string which leads to the strength/velocity estimation: Each note has two onsets and a single offset for pipa case.
+  - The fake nails will produce a crisp sound and envelope peak while touching the string corresponding to a note starting, i.e. key-on. The second peak of a tone indicates the natural transient from the string which serves to the strength/velocity estimation. Each note has two onsets and a single offset for pipa case.
 
-- Single Note Annotation
+- Note Annotation for a single pluck
   
   - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-27-49-image.png)
   
@@ -142,19 +144,19 @@ The workflow of TEAS consists of following main steps:
   
   - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-29-41-image.png)
   
-  - Only the first and the last peak for the Tremolo note need to mark.
+  - Only the first(for pluck noise) and the last peak(natural transient) within the Tremolo note need to mark.
   
   - To remove Onsets/Offsets/Notes:
     
-    - Click on the Onset/Offset/Note you wish to delete, then Click on `Delete Onset` or `Detele Offset` or `Delete Note`, or simply keypress `Backspace`. Do not click in the note if you are trying to edit the Boundary. move your mouse cursor upper or lower for directly selecting  the boundary.
+    - Select the Onset/Offset/Note(Approximate position is ok for onset/offset, the closest one will be chosen; click on the rectangle to select a note), then Click on `Delete Onset` or `Detele Offset` or `Delete Note`, or simply keypress `Backspace`. 
     
-    - You can speed up the workflow by Using the `Select Boundary Area` button. after doing so, you can select all Onsets and Offsets in a certain area, and choose to either delete only Onset or Offset with the corresponding button, or keypress `Backspace` on to remove all selected boundaries.
+    - You can speed up the workflow by Using the `Select Boundary Area` button to select all Onsets and Offsets in a certain area, and delete only Onsets or Offsets with `Delete Onset` or `Detele Offset` button, or keypress `Backspace` on to remove all selected boundaries.
   
   - To add offset:
     
-    - Click on `Add Onset` button, then click on an approximate location of peak(the closest peak will be chosen for onset).
+    - Click on `Add Onset` button, then click on an approximate position of peak(the closest peak will be chosen for onset if 'Onset auto-adjustment' checkbox is active).
   
-  - Basic workflow of Note detection:
+##### Note Segmentation
     
     - Click on `Onset Detection` button, the algorithm will find potential peaks (*High false positive outcome*), and mark them all as Onsets rendered as red lines. 
     
