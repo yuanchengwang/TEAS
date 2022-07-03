@@ -244,7 +244,7 @@ The workflow of TEAS consists of main steps below:
 
 - Add or delete the sliding intervals and correct the boundaries.
 
-- Select the correct `Type` for each Sliding.
+- Select the correct `Type` for each Sliding. Notice that the pitch height of a note need to be set via first half pitch segment for sliding and sliding out or via second half segment for sliding in.
 
 - Click `Export Area(s)` button to export all Sliding intervals. 
 
