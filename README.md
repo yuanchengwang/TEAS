@@ -224,13 +224,13 @@ The workflow of TEAS consists of main steps below:
 
 - Navigate to `Vibrato Analysis` tab.
 
-- Click `Get Vibrato(s)`button. Algorithm will find all Pitch curves that is similar to a vibrato. The vibrato is automatically resized between the second Onset to the Offset of a Note 
+- Click `Get Vibrato(s)`button to achieve the vibrato intervals and parameters. The vibrato is automatically resized within the second onset and the offset of a note.
 
-- To achieve performance-level annotation, squeeze the boundary of vibratos. Choose vibrato/trill/bending types manually. Add the vibrato if lost.
+- To achieve performance-level annotation, squeeze the vibrato ranges if needed. Choose vibrato/trill/bending types manually. Add the vibrato if missing.
 
-- Click `Export Area(s)`button to export all Vibrato intervals.
+- Click `Export Area(s)`button to export all vibrato intervals.
 
-- Click `Export Parameters` button to export all Vibrato parameters.
+- Click `Export Parameters` button to export all vibrato parameters.
 
 ##### Sliding Analysis
 
@@ -238,9 +238,9 @@ The workflow of TEAS consists of main steps below:
 
 - Navigate to `Sliding Analysis` tab
 
-- Click `Vibrato-free Pitch` button. This will flatten the pitch curve in vibrato intervals.
+- Click `Vibrato-free Pitch` button to flatten the pitch curve of vibrato intervals.
 
-- Click `Get Sliding(s)` button simultaneously, while examinating by hearing each in the Slidings list. More times you click, more intervals generate. Please do not click the button for too many times, which will lead to over-smoothing artifact and biased parameters.
+- Click `Get Sliding(s)` button to achieve the potential sliding intervals. More clicks on the `Get Sliding(s)`, more smoothness of the pitch curve, more sliding intervals. Please do not click the button for too many times, which will lead to over-smoothing artifact and biased parameters. Click `Vibrato-free Pitch` to recover the pitch curve.
 
 - Add or delete the sliding intervals and correct the boundaries.
 
