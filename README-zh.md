@@ -15,7 +15,7 @@
 
 ## 启动TEAS:
 
-- 第一步: 新建一个项目文件夹。为了提高项目的一致性和可维护性，我们建议您按照`示例数据集`（见后）中的规则对文件进行命名
+- 第一步: 新建一个项目文件夹,并按照`示例数据集`（见后）中的规则命名文件.
   
   - 基本文件类型与命名规则
     
@@ -33,14 +33,14 @@
     
     <u>(*):</u>TEAS会自动通过弦号定义和音频源文件在导出文件时提供标准化的名称
 
-- 第二步:    在`parametersetting.m`文件中设定基础参数，如：弦号定义、导出MIDI时的预估BPM等。如果您对MIDI输出有其他需求，可以在`protocolsetting.m`中依照您需要的输出方式进行设置。TEAS的默认参数设置都以琵琶为基础
+- 第二步:    在`parametersetting.m`文件中设定弦号定义、导出MIDI时的预估BPM等基础参数，在`protocolsetting.m`中设置MIDI输出选项。TEAS的默认参数设置都以琵琶为基础
 
 - 第三步:    运行`GUI_Main.m`文件，您将看到TEAS的默认页面: Read Audio
 
 
 ## 使用TEAS:
 
-使用TEAS进行标记可以粗略分为以下步骤：
+TEAS标记的基本流程：
 
 - [MSS(多轨信号分离)(可选)](#多轨信号分离)
 
@@ -112,9 +112,7 @@
   
   - 音调识别错误修正
     
-    - 点击`Select Pitch Area`按钮，拖动鼠标框住错误的音高曲线部分； 直接点击则是选择一个点，在Single point modification下方的输入框中填写正确的频率再修正
-
-    - 观察Pitch线后方对应的能量图(蓝色为低，红色为高)，若有Pitch但后方无明显对应基频的响度，则为漏音，鼠标框柱对应Pitch的线，将频率改写为0，点击`Modify`按钮即可
+    - 点击`Select Pitch Area`按钮，框选出错误的Pitch区域，在Single point modification下方的输入框中填写正确的频率，点击`Modify`按钮。将频率设置为0则无声。
     
     - 常见为八度泛音识别错误，框出错误后点击`Up`或者`Down`按钮即可
     
@@ -149,21 +147,19 @@
   
   - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-29-41-image.png)
   
-  - 为了Offset检测的需要，当出现轮指时，第一个Onset标记于轮指开始的第一个波峰，第二个Onset标记于轮指的最后一次波峰
-  
-  - 如图所示，在蓝色线的能量聚集处，第一个波峰和最后一个波峰分别标记了Onset
+  - 遇到轮指时，只在第一个和最后一个波峰处标记Onset
 
 - 操作说明
   
-  - 如何快速删除:
+  - 如何删除Onset/Offset:
     
-    - 在鼠标指针图标为正常的指针的情况下，单击于所选boundary处(不需要完全准确，程序会自动选择最近的boundary)，或者选择对应的note区块。若boundary与note重叠选取boundary，需要点击上下的非重叠部分。当图像刷新后，点击红色的Delete Onset/Offset/Note按钮或按下键盘上的退格(backspace)键
+    - 单击于所选boundary处(不需要完全准确，程序会自动选择最近的boundary)，或者选择对应的note区块。若boundary与note重叠选取boundary，需要点击上下的非重叠部分。当图像刷新后，点击红色的Delete Onset/Offset/Note按钮或按下键盘上的退格(backspace)键
     
     - 点击右侧边栏上的Select Boundary Area按钮后，在图像内可以框选出一定区域内的所有Onset+Offset,此时按下键盘上的退格(backspace)键会删除所有的Onset和Offset。点击`Delete Onset`或`Delete Offset`则会删除选定区域内的所有Onset或者Offset,而不是全部删除
   
   - 如何快速添加:
     
-    - 在不使用缩放工具的情况下(鼠标指针图标为正常的指针)，单击绿色的`Add Onset`按钮，然后在图表上点击对应的蓝色波峰处
+    - 单击绿色的`Add Onset`按钮，然后在图表上点击对应的蓝色波峰处
   
   - 标记流程:
     
@@ -229,7 +225,7 @@
 
 - 点击`Get Vibrato(s)`按钮，将会列出所有类似于Vibrato的事件
 
-- 分别点击左下方列表中的各音，用`Play Vibrato`按钮来聆听当前选中的Vibrato事件所在的音频，确定是否为Vibrato技法。若不是，使用`Delete Vibrato`按钮来删除当前选中的Vibrato事件
+- 分别点击左下方列表中的各音，用`Play Vibrato`按钮来聆听当前选中的Vibrato事件所在的音频，确定是否为Vibrato技法。使用`Delete Vibrato`按钮来删除当前选中的Vibrato事件
 
 - 在每个正确的Vibrato事件右侧选择正确的Type
 
@@ -272,9 +268,9 @@
 
 - 点击`Get Tremolo(s)`按钮来计算每个Note中的pluck
 
-- 依次检查每一个Note,如果是一个普通的Note,则只出现一个pluck在能量峰处。若出现多余的pluck，请鼠标左键点击该pluck后点击`Delete Pluck`按钮或按键盘上的Backspace键
+- 观察列表中的Note，普通的Note应该仅在第二个能量峰处存在一个pluck。选中并使用`Delete Pluck`按钮或按键盘上的Backspace键删除多余pluck
 
-- 若出现Tremolo，需要检查是否除了最后一个音以外的每个音的头和尾处的能量峰上都拥有一个pluck，若缺失则使用`Add Pluck`按钮并点击需要添加的位置。若出现多余或错位的pluck则鼠标左键点击该Pluck后点击`Delete Pluck`按钮或按键盘上的Backspace键
+- 若发现tremolo，使用`Add Pluck`按钮并在缺少pluck的附近点击鼠标左键来补全pluck。
 
 - 在每个正确的Tremolo右侧选择对应的Type. 对于2，3弦，技巧默认是摇而不是轮，请根据实际情况进行调整。
 指法：摇：食指来回弹奏；滚：食指拇指交替，轮：超过两个指头弹奏
@@ -328,9 +324,9 @@
 
 - 导出工程文件或MIDI文件
   
-  - 当导入多轨道内容完成后，点击右侧`Project/MIDI Export`
-    在弹出的文件选择框的下方可以选择保存为Project或保存为Midi文件。
-    当确认保存位置后，会出现bpm确认的弹窗。如果估计的bpm值与实际值偏差较大，也可以从`ParameterSetting.m`修改初始beats_per_second。
+  - 当导入多轨道内容完成后，点击右侧`Project/MIDI Export`按钮
+    选择保存为Project或保存为MIDI。
+    当确认保存位置后，会出现BPM相关信息的弹窗。如果估计的BPM值与实际值偏差较大，可以在`ParameterSetting.m`中修改初始BPM。
 
 ##### 示例数据集
 包含茉莉花南泥湾十面埋伏(第一段)的多模态数据集预览：
