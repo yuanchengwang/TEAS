@@ -227,6 +227,8 @@ The workflow of TEAS consists of main steps below:
 - Click `Get Vibrato(s)`button to achieve the vibrato intervals and parameters. The vibrato is automatically resized within the second onset and the offset of a note.
 
 - To achieve performance-level annotation, squeeze the vibrato ranges if needed. Choose vibrato/trill/bending types manually. Add the vibrato if missing.
+- 
+- To add a vibrato the interval will be autoadjusted within the second onset and offset.
 
 - Click `Export Area(s)`button to export all vibrato intervals.
 
@@ -258,19 +260,18 @@ The workflow of TEAS consists of main steps below:
 
 - Navigate to `Tremolo Analysis` tab.
 
-- Click `Get Tremolo(s)` button to calculate the plucks in each Note.
+- Click `Get Tremolo(s)` button to calculate the plucks within each candidate note.
 
-- Examine each candidate note. If the Note is just a regular Note, only a single pluck exist at the second onset peak. If there is more than one pluck for a normal note, remove the extra plucks by click on the pluck then deleting via `Delete Pluck` button, or simply keypress `Backspace`.
+- Examine each candidate note. If the note is just a regular one, only a single pluck is present at the second onset peak for natural transient. If there is more than one pluck for a normal note, remove the extra plucks by selecting/clicking on the pluck then deleting via `Delete Pluck` button, or simply keypress `Backspace`.
 
-- If tremolo occurs, add the 
- You should add the missing pluck in a tremolo by clicking on `Add Pluck` button and click on approximate pluck position. Clicking Delete the defective ones with `Delete Pluck` button, or keypress `Backspace`.
+- If tremolo occurs, add the missing pluck by clicking on `Add Pluck` button then on approximate pluck position.
 
 - Choose the correct `Type` for each tremolo. For the 2nd and the 3rd string, default Tremolo type is `shaking`. 
   Fingering: Shaking: plucking with index finger, Rolling: alternative plucking using thumb and index fingers, Wheel: plucking with more than 2 fingers.
 
 - Example of a correct tremolo pluck annotation:
   
-  - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-28-13-image.png)
+- ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-28-13-image.png)
 
 - Click `Export Area(s)+Plucks`button to export all Tremolo intervals.
 
@@ -282,15 +283,15 @@ The workflow of TEAS consists of main steps below:
 
 - Navigate to `Strumming Analysis`tab.
 
-- Click `Multi-track Paths`button to a new interface.
+- Click `Multi-track Paths`button to go to the onset import interface.
   
   ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-41-49-image.png)
 
-- Import Onset for all the tracks, select the priority with `Imported` and click `Test and plot onsets` button. The starting point of each note is rendered in the graph.
+- Import Onset for all the tracks, select the priority with `Imported` and click `Test and plot onsets` button to visualize the onsets for each strings.
 
-- Click `Get Strumming(s)`button.
+- Click `Get Strumming(s)` button.
 
-- Filter the Correct Strumming sequence, use `Delete Strumming` button or key press `Backspace` to delete defective Strumming sequences.
+- Filter the correct strumming sequence, use `Delete Strumming` button or key press `Backspace` to delete defective strumming sequences. Add Strumming by select the area consisting of the onsets, the interval will be automatically adjusted.
 
 - Choose the correct Type for each Strumming Note on the right side panel.
 
@@ -323,7 +324,7 @@ https://zenodo.org/record/6760047
 
 More pieces of music are coming in the future.
 
-## Todo
+## Todo list
 - Graphic optimization
 - More and better algorithms
 - MPE,(music)XML,JAMS format support
