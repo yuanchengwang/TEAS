@@ -4,19 +4,19 @@
 
 [![zh](https://img.shields.io/badge/点击这里-查看中文文档-green.svg)](https://github.com/yuanchengwang/TEAS/blob/main/README-zh.md)
 
-# TEAS Quick Tutorial
+# TEAS Quick Start
 
 **Quick Tutorial for Transcription and Expressiveness Annotation System dedicated to Chinese traditional instrument Pipa**
 
 ## Prerequisite：
 
-- Install MATLAB version R2021a or above, with all optional packages. This system is implemented on Windows, some issues may occur for other OS.
+- Install MATLAB version R2021a or above, with all optional packages. Implemented on Windows, this system may have some issues for other OS.
 
 - If use `pyin(tony)` as `pitch tracker`, please install `sonic-annotator(64bit)` and add its installation path to SYSTEM PATH. Also, paste `pyin_1.1.1.dll` into `C:\Program Files\Vamp Plugins`.
 
 ## Starting up TEAS:
 
-- Create a new folder for your project referring to Pipaset preview (See detailsbelow)
+- Create a new folder for your project referring to the files in Pipaset preview (See details below)
   
   - Naming scheme
     
@@ -34,7 +34,7 @@
     
     <u>(*):</u>TEAS will automatically determine the default file name via string index and name of the audio source. 
 
-- Configure the parameters like `string_index`, initial guess of 'beats_per_second' etc in `parametersetting.m`, in addition of synthesizer MIDI setting in `protocolsetting.m` if requiring control keys. All parameters are set specific to our study target, pipa and MIDI output follows the setting of the Ample China Pipa (ACP) synthesizer.
+- Configure the parameters e.g. `string_index`, initial guess of BPS 'beats_per_second' etc in `parametersetting.m`, in addition of synthesizer control-key setting in `protocolsetting.m` for MIDI export. All parameters are set specific to pipa and MIDI output following the setting of the Ample China Pipa (ACP) synthesizer.
 
 - Run `GUI_Main.m` to launch the platform
 
@@ -42,7 +42,7 @@
 
 ## TEAS Workflow:
 
-The workflow of TEAS consists of following main steps:
+The workflow of TEAS consists of main steps below:
 
 - [MSS(Multichannel signal separation)(Optional)](#MSS)
 
@@ -72,7 +72,7 @@ The workflow of TEAS consists of following main steps:
 
 ### MSS
 
-(Optional) Import audio source with mutual resonance in each track of Multitrack+MIDI tab. Then click `Signal Separation` button to run the MSS. Export the debleeded signal from each track of Multitrack+MIDI tab. This step will effectively reduce the interference among the strings.
+(Optional) Import audio source with mutual resonance via 'Audio import' in each track of Multitrack+MIDI tab. Then click `Signal Separation` button to run the MSS. Export the debleeded signal via 'Audio export' from each track of Multitrack+MIDI tab. This step will effectively reduce the interference among the strings.
 
 ### AMT
 
@@ -80,7 +80,7 @@ The workflow of TEAS consists of following main steps:
 
 ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-03-59-13-image.png)
 
-- Under `ReadAudio` tab, import denoised/debleeded audio source with `Import Denoised Wave` button. Make sure the string index of imported audio identical to that in `parametersettings.m`
+- In `ReadAudio` tab, import denoised/debleeded audio source with `Import Denoised Wave` button. Make sure the string index of imported audio identical to that in `parametersettings.m`
 
 ##### Pitch Detection
 
@@ -88,7 +88,7 @@ The workflow of TEAS consists of following main steps:
 
 - Navigate to `Pitch Detection` tab
 
-- Select an algorithm for pitch tracking.
+- Select a pitch tracker.
   
   ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-00-22-image.png)
   
@@ -96,11 +96,11 @@ The workflow of TEAS consists of following main steps:
   
   - BNLS: Slowest, better consistency in time but slightly worse in pitch. Rough crop for the pitch curve is required (Recommended in complex articulation cases).
   
-  - A backup of the roughly processed original pitch file is recommended for later use. We save it with  `_original` at the end of the filename. 
+  - A backup of the manually processed original pitch file is recommended for later use. We save it with  `_original` at the end of the filename. 
 
 - Pitch editing:
   
-  - Pitch curve from other string's vibration is recommended to manually remove. Hint: Playback is provided. 
+  - Pitch from other string's vibration is recommended to manually remove(convert to unvoiced place, see pitch error correction below). Hint: Playback is provided and the spectrogram behind pitch curve is available.
   
   - Import and export Pitch Curve
     
@@ -110,9 +110,7 @@ The workflow of TEAS consists of following main steps:
   
   - Pitch error correction
     
-    - Select the defective pitch segment after clicking the `Select Pitch Area` button or select a single point by clicking directly on the pitch curve, input the desired pitch value in `single point modification` then click the `Modify` button.
-    
-    - Through the spectrogram behind pitch curve and playback, set the pitch value of unvoiced area to `0`.
+    - Select the defective pitch segment after clicking `Select Pitch Area` button or select a single point by clicking directly on the pitch curve, input the desired pitch value in `single point modification` then click the `Modify` button. 0 corresponds to unvoiced areas.
     
     - Octave error may occur. Select the area and octave up or down by `Up` or the `Down` button.
     
@@ -132,43 +130,47 @@ The workflow of TEAS consists of following main steps:
   
   - Offset = The end of each MIDI note
   
-  - The fake nails will produce a crisp sound and envelope peak while touching the string corresponding to a note starting, i.e. key-on. The second peak of a tone indicates the natural transient from the string which serves to the strength/velocity estimation. Each note has two onsets and a single offset for pipa case.
+  - The fake nails will produce a crisp sound and envelope peak while touching the string corresponding to the MIDI start, i.e. key-on. The following second peak indicates the natural transient from the string which serves to the strength/velocity estimation. Each note has two onsets and a single offset for pipa case.
 
 - Note Annotation for a single pluck
   
   - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-27-49-image.png)
   
-  - As shown in the figure: Notes are shown as gray rectangles. Red lines represent onset points. Yellow lines indicate the offset which may be covered by the onsets of the subsequent notes. 
+  - As shown in the figure: Gray rectangles represent notes, red lines the onset points, yellow lines the offset which may be covered by the onsets of the subsequent notes. 
 
-- Note annotation in Tremolo case 
+- Note annotation in TREMOLO case 
   
   - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-29-41-image.png)
   
-  - Only the first(for pluck noise) and the last peak(natural transient) within the Tremolo note need to mark.
+  - Only the first(from pluck noise) and the last peak(natural transient) within the Tremolo note need to mark.
   
-  - To remove Onsets/Offsets/Notes:
+- To remove Onsets/Offsets/Notes:
     
-    - Select the Onset/Offset/Note(Approximate position is ok for onset/offset, the closest one will be chosen; click on the rectangle to select a note), then click `Delete Onset` or `Detele Offset` or `Delete Note`, or simply keypress `Backspace`. 
+  - Select the Onset/Offset/Note(Approximate position is ok for onset/offset, the closest one will be chosen; click on the rectangle to select a note), then click `Delete Onset` or `Detele Offset` or `Delete Note`, or simply keypress `Backspace`. 
     
-    - You can speed up the workflow by Using the `Select Boundary Area` button to select all Onsets and Offsets in a certain area, and delete only Onsets or Offsets with `Delete Onset` or `Detele Offset` button, or keypress `Backspace` on to remove all selected boundaries.
+  - You can speed up the workflow by Using the `Select Boundary Area` button to select all Onsets and Offsets in a certain area, and delete only Onsets or Offsets with `Delete Onset` or `Detele Offset` button, or keypress `Backspace` on to remove all selected boundaries.
   
-  - To add offset:
+- To add Onsets/Offsets/Notes:
     
-    - Click `Add Onset` button, then click on an approximate position of peak(the closest peak will be chosen for onset if 'Onset auto-adjustment' checkbox is active).
+  - Click `Add Onset` button, then click on an approximate position of peak(the closest peak will be chosen for onset if 'Onset auto-adjustment' checkbox is active).
+  
+  - No adjustment for offset.
+  
+  - Click `Add Note` button, then select an area within the area you want(interval overlap is not allowed in monphonic case), the pitch and the interval will be adjusted automatically. 
   
 ##### Note Segmentation using Corrected Boundaries
     
-    - Click on `Onset Detection` button, the algorithm will find potential peaks (*High false positive outcome*), and mark them all as Onsets rendered as red lines. 
+    - Click on `Onset Detection` button, the potential peaks for onsets will be shown (*High false positive outcome as the deleting is easier than adding*). 
     
-    - Remove all detective Onsets from unvoiced and tremolo intervals. 
+    - Remove all detective onsets from unvoiced and tremolo intervals. 
     
       Hint: `Select Boundary Area` will speed up the process. 
       
-      Hint: you can toggle `Plot Audio` checkbox to determine the boundary point.
+      Hint: you can toggle `Plot Audio` checkbox to determine all the boundary positions.
     
     - Given the corrected onsets, detect the offsets via the `Offset Detection` button. Some of them can be invisible due to the onset overlap of the following note.
     
-    - When boundaries are done, notes can be generated by simply clicking on the `Pitch2note` button. with this, you can examine errors during the marking of Boundaries. 
+    - When all boundaries are done, notes can be generated by simply clicking on the `Pitch2note` button. An alternative correction between boundary and notes will imporve the accuracy.
     
     - Notice: Even number of onsets must be ensured before running offset detection and pitch2note functions.
       
@@ -184,23 +186,23 @@ The workflow of TEAS consists of following main steps:
       
       - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-56-19-image.png)
     
-    - The notes can be exported for overall examination by clicking the `Export Notes` button, and then change the format from  `.csv` to `.mid`. There will be a prompt to BPM selection and how to set your own initial guess of BPM. When examinating, pay attention to missing Notes/Notes with wrong Pitch.
+    - The notes can be exported for overall validation by clicking the `Export Notes` button, and then change the format from  `.csv` to `.mid`. There will be a prompt to BPM selection and how to set your own initial guess of BPM. When examinating, pay attention to missing Notes/Notes with wrong Pitch.
   
-  Notice that the BPM and BPS only work for music notation generation. An arbitrary value allows a synthesis-only use.
+  Notice that the BPM/BPS are neccessary for music notation generation. An arbitrary value works for a synthesis-only use.
   
   - Import and Export of Boundaries and Notes
     
     - Boundaries:
       
-      - How to export：Click `Export Boundaries` button,select the path to save the boundary.
+      - How to export：Click `Export Boundaries` button, select the path to save the boundary.
       
-      - How to import：Click `Import Boundaries` button,select the boundary file to load.
+      - How to import：Click `Import Boundaries` button, select the boundary file to load.
     
     - Note:
       
-      - How to export：Click `Export Notes` button,select the path to save the dataset.
+      - How to export：Click `Export Notes` button, select the path to save the dataset.
       
-      - How to import：Click `Import Notes` button,select the dataset or mid file to load.
+      - How to import：Click `Import Notes` button, select the dataset or mid file to load.
       
       - Notice： Default Midi control key is generated based on Ample China Pipa. You can adjust these settings in `protocolsettings.m`
 
