@@ -306,28 +306,28 @@ The workflow of TEAS consists of main steps below:
 
 - Navigate to`Multitrack+MIDI`tab
 ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-35-45-image.png)
-- Import audio and features in dataset
+- Import audio and feature annotation in dataset
   
-  - Import audio or music features in each track and visualize by toggling the corresponding checkbox.
+  - Import audio or annotated music features in each track and visualize by toggling the corresponding checkbox.
 
 - Export Project or Midi file
   
-  - Click `Project/MIDI Export` button and choose to save mulittrack session to Project or Midi. When exporting Midi,there will be prompts to tell you informations about BPM guessing and how to set your own initial guess of BPM. 
+  - Click `Project/MIDI Export` button and choose to save mulittrack session to Project or Midi. When exporting Midi,there will be prompts to inform about BPM. 
     
 
 ## Preview datasets
 
-Pipaset preview  including JasmineFlower, NanniBay and Ambush from ten sides(Section 1) is available on:
+Pipaset preview including JasmineFlower, NanniBay and Ambush from ten sides(Section 1) is available on:
 
 https://zenodo.org/record/6760047
 
-More pieces of music in the future.
+More pieces of music are coming in the future.
 
 ## Todo
 - Graphic optimization
 - More and better algorithms
 - MPE,(music)XML,JAMS format support
-- MIDI protocol
+- MIDI protocol support
 
 ## Citation
 
