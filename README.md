@@ -289,9 +289,9 @@ The workflow of TEAS consists of main steps below:
 
 - Import Onset for all the tracks, select the priority with `Imported` and click `Test and plot onsets` button to visualize the onsets for each strings.
 
-- Click `Get Strumming(s)` button.
+- Click `Get Strumming(s)` button to achieve the intervals and parameters.
 
-- Filter the correct strumming sequence, use `Delete Strumming` button or key press `Backspace` to delete defective strumming sequences. Add Strumming by select the area consisting of the onsets, the interval will be automatically adjusted.
+- To add Strumming by select the area consisting of the onsets, the interval will be automatically adjusted.
 
 - Choose the correct Type for each Strumming Note on the right side panel.
 
