@@ -125,8 +125,7 @@ The workflow of TEAS consists of main steps below:
     ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-08-13-image.png)
 
 ##### Boundary Detection
-
-    ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-14-22-image.png)
+![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-14-22-image.png)
 
 - Boundary definition for pipa:
   
