@@ -178,17 +178,17 @@ The workflow of TEAS consists of main steps below:
     
   - Notice: Even number of onsets must be ensured before running offset detection and pitch2note functions.
       
-    ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-53-18-image.png)
+  ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-53-18-image.png)
     
   - What a correct single-pluck note looks like:
       
-    ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-55-44-image.png)
+  ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-55-44-image.png)
     
   - What a correct tremolo note looks like:
       
-    ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-29-41-image.png)
+  ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-29-41-image.png)
       
-    ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-56-19-image.png)
+  ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-56-19-image.png)
     
   - The notes can be exported for overall validation by clicking the `Export Notes` button, and then change the format from  `.csv` to `.mid`. There will be a prompt to BPM selection and how to set your own initial guess of BPM. When examinating, pay attention to missing Notes/Notes with wrong Pitch.
   
@@ -224,7 +224,7 @@ The workflow of TEAS consists of main steps below:
 
 ##### Vibrato Analysis
 
-    ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-28-56-image.png)
+![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-28-56-image.png)
 
 - Navigate to `Vibrato Analysis` tab.
 
@@ -307,10 +307,12 @@ The workflow of TEAS consists of main steps below:
 
 ##### Multitrack+MIDI
 
-    ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-34-44-image.png)
+![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-34-44-image.png)
 
 - Navigate to`Multitrack+MIDI`tab
-    ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-35-45-image.png)
+
+![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-35-45-image.png)
+
 - Import audio and feature annotation in dataset
   
   - Import audio or annotated music features in each track and visualize by toggling the corresponding checkbox.
