@@ -138,13 +138,13 @@ The workflow of TEAS consists of main steps below:
 
 - Note Annotation for a single pluck
   
-      ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-27-49-image.png)
+  ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-27-49-image.png)
   
   - As shown in the figure: Gray rectangles represent notes, red lines the onset points, yellow lines the offset which may be covered by the onsets of the subsequent notes. 
 
 - Note annotation in *TREMOLO* case 
   
-      ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-29-41-image.png)
+  ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-29-41-image.png)
   
   - Only the first(from pluck noise) and the last peak(natural transient) within the Tremolo note need to mark.
   
@@ -260,7 +260,7 @@ The workflow of TEAS consists of main steps below:
 
 ##### Tremolo Analysis
 
-    ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-22-54-image.png)
+![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-22-54-image.png)
 
 - Navigate to `Tremolo Analysis` tab.
 
