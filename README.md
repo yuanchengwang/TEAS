@@ -114,11 +114,15 @@ The workflow of TEAS consists of main steps below:
     
     - Octave error may occur. Select the area and octave up or down by `Up` or the `Down` button.
     
-    Pitch editing examples:![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-07-34-image.png)
+    Pitch editing examples:
+    
+    ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-07-34-image.png)
     
     As shown in the figure: octave error in pitch curve located within 88 and 94 seconds.(B3-> B2), <u>Solution to this problem</u>: select the defective area and click the `Up` button.
     
-    Result：![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-08-13-image.png)
+    Result：
+    
+    ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-08-13-image.png)
 
 ##### Boundary Detection
 
