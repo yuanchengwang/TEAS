@@ -116,11 +116,13 @@ TEAS标记的基本流程：
     
     - 常见为八度泛音识别错误，框出错误后点击`Up`或者`Down`按钮即可
     
-    案例:![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-07-34-image.png)
+    案例:
+    ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-07-34-image.png)
     
     如图所示：在88到94秒的凸起波形中存在下落的数据，观察可知下降了八度（B3->B2），解决方法：框住错误的部分，点击`Up`按钮
     
-    结果：![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-08-13-image.png)
+    结果：
+    ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-04-08-13-image.png)
   
   
 
@@ -139,13 +141,13 @@ TEAS标记的基本流程：
 
 - 单音示例
   
-  - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-27-49-image.png)
+  ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-27-49-image.png)
   
   - 如图所示，图中的灰黑色条为Note，红线为Onset,每个Note的结尾处有与第二个音开头处的Onset重叠的Offset。中间黑色的线为Pitch，图中央的单独波峰对应的是滑音
 
 - 轮指示例
   
-  - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-29-41-image.png)
+  ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-29-41-image.png)
   
   - 遇到轮指时，只在第一个和最后一个波峰处标记Onset
 
@@ -174,19 +176,19 @@ TEAS标记的基本流程：
     
     - 注意:当第三步出现以下报错时，Onset为奇数（琵琶场景下），整体中存在错误
       
-      - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-53-18-image.png)
+      ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-53-18-image.png)
       
       - 解决办法：再修正一个错误，让整体Onset数量变成偶数后重试
     
     - 图示为一个正确的音符note区域，前部有起震，振幅随着时间逐渐降低
       
-      - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-55-44-image.png)
+      ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-55-44-image.png)
     
     - 相应的，轮指标记出的音符在上方的渲染中应为一个长音，而note图表中则是一些音不断重复的集合
       
-      - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-29-41-image.png)
+      ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-29-41-image.png)
       
-      - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-56-19-image.png)
+      ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-13-56-19-image.png)
     
     - 导出单轨道Midi并对应音频进行总体查错，注意漏音、错音等情况。
       点击Export Notes按钮，在弹出的目录选择框中，将文件格式由.csv修改为.mid后保存。确认保存位置后，会出现bpm确认的弹窗。
@@ -277,7 +279,7 @@ TEAS标记的基本流程：
 
 - 示例:正确的Tremolo标记,里面pluck类似onset，两个对应一次弹奏
   
-  - ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-28-13-image.png)
+  ![](https://github.com/yuanchengwang/TEAS/blob/main/readme-assets/2022-06-30-14-28-13-image.png)
 
 - 点击`Export Area(s)+Plucks`按钮导出所有Tremolo事件范围
 
