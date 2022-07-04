@@ -34,7 +34,7 @@
     
     <u>(*):</u>TEAS will automatically determine the default file name via string index and name of the audio source. 
 
-- Configure the parameters e.g. `string_index`, initial guess of BPS 'beats_per_second' etc in `parametersetting.m`, in addition of synthesizer control-key setting in `protocolsetting.m` for MIDI export. All parameters are set specific to pipa and MIDI output following the setting of the Ample China Pipa (ACP) synthesizer.
+- Configure the parameters e.g. `track_index`, initial guess of BPS `beats_per_second` etc in `parametersetting.m`, in addition of synthesizer control-key setting in `protocolsetting.m` for MIDI export. All parameters are set specific to pipa and MIDI output following the setting of the Ample China Pipa (ACP) synthesizer.
 
 - Run `GUI_Main.m` to launch the platform
 
@@ -331,7 +331,7 @@ More pieces of music are coming in the future.
 ## Todo list
 - Graphic optimization
 - More and better algorithms
-- MPE,(music)XML,JAMS format support
+- MPE, mxl, xml, jams format support
 - MIDI protocol support
 
 ## Citation
