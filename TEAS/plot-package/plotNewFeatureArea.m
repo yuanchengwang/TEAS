@@ -11,7 +11,7 @@ function [ newPatchVibratoArea ] = plotNewFeatureArea(feature,axeInput)
     hold on
     faceAlpha = 0.5;
     newPatchVibratoArea = fill([feature(1),feature(2),feature(2),feature(1)],...
-            [axeInput.YLim(1),axeInput.YLim(1),axeInput.YLim(2),axeInput.YLim(2)],[.5 .0 .0],'EdgeColor','none','FaceAlpha',faceAlpha);    
+            [0,0,200,200],[.5 .0 .0],'EdgeColor','none','FaceAlpha',faceAlpha);    
     hold off
 end
 

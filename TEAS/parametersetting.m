@@ -37,5 +37,5 @@ data.xAxisVibrato = 1; %for x axis chosen, 1: Original time; 2: Normalized time
 %Strumming
 data.selectedtrack=1;%Initial setting for track in strumming
 data.criteria_strum=50;% between two onsets,0.05s
-data.criteria_strumRate=0.2;%strum speed criteria
+data.criteria_strumRate=0.3;%strum speed criteria
 end
