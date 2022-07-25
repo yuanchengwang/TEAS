@@ -9,6 +9,7 @@ function patchFeaturesTrackOnsets=plotStrumming(onset_tracks,color,track_nb,stru
         end
     end
     yticks(1:track_nb);
+    ylim([0.5,track_nb+0.5]);
     xlim([strum(1),strum(2)]+[-0.1,+0.5]);%[-0.1,+0.5]
     hold off;
 end
