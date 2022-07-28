@@ -13,7 +13,7 @@ function [patchFeaturesArea] = plotFeaturesArea( features,axeInput)
     hold on;
     for i = 1:size(features,1)  
         patchFeaturesArea(i) = fill([features(i,1),features(i,2),features(i,2),features(i,1)],...
-            [0,0,200,200],faceColor,'EdgeColor','none','FaceAlpha',faceAlpha);
+            [-200,-200,200,200],faceColor,'EdgeColor','none','FaceAlpha',faceAlpha);
         %[25,25,105,105]
     end
     hold off;
