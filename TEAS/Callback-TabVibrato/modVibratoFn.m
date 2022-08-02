@@ -1,8 +1,10 @@
 function modVibratoFn(hObject,eventData)
 %MODVIBRATOFN modify vibrato
-%   ´Ë´¦ÏÔÊ¾ÏêÏ¸ËµÃ÷
+%   ï¿½Ë´ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ï¸Ëµï¿½ï¿½
     global data;
-    
+    method = get(data.methodVibratoChange,'Value');
+    method1 = get(data.methodVibratoDetectorChange,'Value');
+    method2 = get(data.methodParameterChange,'Value');
     %get the time range after the change
     vib =  split(get(data.vibratoXEdit,'String'),'-');
     modVibratoStart = str2num(vib{1});
@@ -100,8 +102,8 @@ function modVibratoFn(hObject,eventData)
         vibratosParaFDMModVibrato = [vibratosParaFDMModVibrato,vibratosSSModVibrato];
         vibratoParaMaxMinModVibrato = [vibratoParaMaxMinModVibrato,vibratosSSModVibrato];
         %modify the para in the para array
-        data.vibratoPara{1}(modIndex,:) = vibratosParaFDMModVibrato;
-        data.vibratoPara{2}(modIndex,:) = vibratoParaMaxMinModVibrato;
+        data.vibratoPara{method,method1,1}(modIndex,:) = vibratosParaFDMModVibrato;
+        data.vibratoPara{method,method1,2}(modIndex,:) = vibratoParaMaxMinModVibrato;
         %-----END of calculating the new para-----------
         
         %plot the modified vibrato
