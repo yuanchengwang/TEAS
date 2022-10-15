@@ -344,7 +344,7 @@ https://zenodo.org/record/6760047
 ##### 引用
 
 如果您使用该平台和相关数据在您的发表的文章中，请使用以下引用: 
-Yuancheng Wang, Yuyang Jing, Wei Wei, Dorian Cazau, Olivier Adam, Qiao Wang. PipaSet and TEAS: A Multimodal Dataset and Annotation Platform for Automatic Music Transcription and Expressive Analysis dedicated to Chinese Plucked String Instrument Pipa (In review). IEEE ACCESS, 2022.
+Yuancheng Wang, Yuyang Jing, Wei Wei, Dorian Cazau, Olivier Adam, Qiao Wang. PipaSet and TEAS: A Multimodal Dataset and Annotation Platform for Automatic Music Transcription and Expressive Analysis dedicated to Chinese Plucked String Instrument Pipa. IEEE ACCESS, 2022.
 
 最早的原始版本来源于Luwei Yang的工作: [luweiyang.com/research/ava-project](https://luweiyang.com/research/ava-project/)
 如果使用 AVA在您的发表的文章中，请引用: 
